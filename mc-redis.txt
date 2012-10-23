@@ -1,0 +1,56 @@
+feature:
+
+======================================================================
+memcache
+	slab allocation: memory fragment, fast memory alloc
+	libevent: high concurrency
+	O(1) operation: low cpu consumption
+	multithreading: 
+	LRU: to evict not used, timer execute
+	shared_ptr, reference count
+	defer_delete
+======================================================================
+
+
+
+
+
+
+======================================================================
+redis:
+	ae lib: simple libevent implement
+	COW: two daemon, one for query, one for durability
+	AOF:durability
+	master/slave: state change to transfer file or just update command.
+	lookup, expire, then delete, lazy delete.
+	comprehensive data structure.
+	delete: remove from the hashtable
+======================================================================
+
+
+======================================================================
+libevent:
+	select, epoll, kqueue: high performance event 
+	heap: store timer event. dlist: fd event, pipe: signal event
+	it's simple interface 
+======================================================================
+
+
+======================================================================
+stl source annotate
+more & effective c++
+
+linux内核情景分析
+linux-0.12源码剖析
+JOS
+
+SICP
+common-lisp
+
+算法导论
+======================================================================
+
+
+
+	
+	

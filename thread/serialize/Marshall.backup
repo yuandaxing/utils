@@ -1,0 +1,237 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  Marshall.cpp
+ *
+ *    Description:  implemet the operator<< function 
+ *
+ *        Version:  1.0
+ *        Created:  2012年09月18日 20时43分13秒
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yuan DaXing (http://goo.gl/VpwzO), mryuan0@gmail.com
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+/* 
+ * consider to make it more clean
+ */
+#include "Marshall.h"
+
+/*
+Marshall & operator<<(Marshall &m, bool b) {
+	m.packByte(static_cast<char>(b));
+	return m;
+}
+Marshall & operator<<(Marshall & m, uint8_t u8) {
+	m.packByte(static_cast<char>(u8));
+	return m;
+}
+Marshall & operator<<(Marshall &m, int8_t s8) {
+	return m << static_cast<uint8_t>(s8);
+}
+Marshall & operator<<(Marshall &m, uint16_t u16) {
+	return m << static_cast<uint8_t>(u16 & 0xff)
+			<< static_cast<uint8_t>(u16 >> 8);
+}
+Marshall & operator<<(Marshall &m, int16_t s16) {
+	return m << static_cast<uint16_t>(s16);
+}
+Marshall & operator<<(Marshall & m, uint32_t u32) {
+	return m << static_cast<uint16_t>(u32 & 0xffff)
+			<< static_cast<uint16_t>(u32 >> 16);
+}
+Marshall & operator<<(Marshall &m, int32_t s32) {
+	return m << static_cast<uint32_t>(s32);
+}
+Marshall & operator<<(Marshall & m, uint64_t u64) {
+	return m << static_cast<uint32_t>(u64 & 0xffffffff)
+			<< static_cast<uint32_t>(u64  >> 32);
+}
+Marshall & operator<<(Marshall &m, int64_t s64) {
+	return m << static_cast<uint64_t>(s64);
+}
+Marshall & operator<<(Marshall &m, const std::string &s) {
+	uint32_t size = static_cast<uint32_t>(s.size());
+	m << size;
+	m.packRawMem(s.data(), size);
+	return m;
+}
+template <typename IterType>
+Marshall & packRange(Marshall &m, IterType beg, IterType end) {
+	for(  ; beg != end ; ++beg )
+	{
+		m << *beg ;
+	}
+	return m;	
+}
+template <typename T>
+Marshall & operator<<(Marshall &m, const std::vector<T> &v) {
+	uint32_t size = static_cast<uint32_t>(v.size());
+	m << size ;
+	return packRange(m, v.begin(), v.end());
+}
+template <typename T>
+Marshall & operator<<(Marshall &m, const std::list<T> &l){
+	uint32_t size = static_cast<uint32_t>(l.size());
+	m << size ;
+	return packRange(m, l.begin(), l.end());
+}
+template <typename T>
+Marshall & operator<<(Marshall &m, const std::set<T> &s){
+	uint32_t size = static_cast<uint32_t>(s.size());
+	m << size ;
+	return packRange(m, s.begin(), s.end());
+}
+template <typename T, typename V>
+Marshall & operator<<(Marshall &m, const std::map<T, V> &map){
+	uint32_t size = static_cast<uint32_t>(map.size());
+	m << size ;
+	return packRange(m, map.begin(), map.end());
+}
+template <typename T, typename V>
+Marshall & operator<<(Marshall &m, const std::tr1::unordered_map<T, V> &umap) {
+	uint32_t size = static_cast<uint32_t>(umap.size());
+	m << size ;
+	return packRange(m, umap.begin(), umap.end());
+}
+
+
+
+
+// * the same as above
+UnMarshall & operator>>(UnMarshall &um, bool &b) {
+	char c = um.takeChar();
+	b = (c > 0);
+	return um;
+}
+
+UnMarshall & operator>>(UnMarshall &um, uint8_t &u8) {
+	char c;
+	c = um.takeChar();
+	u8 = static_cast<uint8_t>(c);
+	return um;
+}
+UnMarshall & operator>>(UnMarshall &um, int8_t &s8) {
+	uint8_t u8;
+	um >> u8;
+	s8 = static_cast<int8_t>(u8);
+	return um;
+}
+
+UnMarshall & operator>>(UnMarshall &um, uint16_t &u16) {
+	uint8_t h, l;
+	um >> l >> h;
+	u16 = static_cast<uint16_t>(l) + 
+		(static_cast<uint16_t>(h) << 8) ;
+	return um;
+}
+UnMarshall & operator>>(UnMarshall &um, int16_t &s16) {
+	uint16_t u16;
+	um >> u16;
+	s16 = static_cast<int16_t>(u16);
+	return um;
+}
+
+UnMarshall & operator>>(UnMarshall &um, uint32_t &u32) {
+	uint16_t h, l;
+	um >> l >> h;
+	u32 = static_cast<uint32_t>(l) + 
+		(static_cast<uint32_t>(h) << 16) ;
+	return um;
+}
+UnMarshall & operator>>(UnMarshall &um, int32_t &s32) {
+	uint32_t u32;
+	um >> u32;
+	s32 = static_cast<int32_t>(u32);
+	return um;
+}
+UnMarshall & operator>>(UnMarshall &um, uint64_t &u64) {
+	uint32_t h, l;
+	um >> l >> h;
+	u64 = static_cast<uint64_t>(l) + 
+		(static_cast<uint64_t>(h) << 32) ;
+	return um;
+}
+UnMarshall & operator>>(UnMarshall &um, int64_t &s64) {
+	uint64_t u64;
+	um >> u64;
+	s64 = static_cast<int64_t>(u64);
+	return um;
+}
+UnMarshall & operator>>(UnMarshall &um, std::string &s) {
+	uint32_t  size;
+	um >> size;
+	const char *start = um.takeBuff(size);
+	std::string tmp(start, start+size);
+	s = tmp;
+	return um;
+}
+template <typename T>
+UnMarshall & operator>>(UnMarshall &um, std::vector<T> &v) {
+	uint32_t size;
+	um >> size;
+
+	for( uint32_t i = 0 ; i < size ; i++ )
+	{
+		T t;
+		um >> t;
+		v.push_back(t);
+	}
+	return um;
+}
+template <typename T>
+UnMarshall & operator>>(UnMarshall &um, std::list<T> &list) {
+	uint32_t size;
+	um >> size;
+	for( uint32_t i = 0 ; i < size ; i++ )
+	{
+		T t;
+		um >> t;
+		list.push_back(t);
+	}
+	return um;
+}
+template <typename T>
+UnMarshall & operator>>(UnMarshall &um, const std::set<T> &set) {
+	uint32_t size;
+	um >> size;
+	for( uint32_t i = 0 ; i < size ; i++ )
+	{
+		T t;
+		um >> t;
+		set.insert(t);
+	}
+	return um;
+
+}
+template <typename T, typename V>
+UnMarshall & operator>>(UnMarshall &um, std::pair<T, V> &pair) {
+	return um >> pair.first >> pair.second;
+}
+template <typename T, typename V>
+UnMarshall & operator>>(UnMarshall &um, const std::map<T, V> &map) {
+	uint32_t size;
+	um >> size;
+	for( uint32_t i = 0 ; i < size ; i++ )
+	{
+		std::pair<T, V> pair;
+		um >> pair;
+		map.insert(pair);
+	}
+	return um;
+}
+template <typename T, typename V>
+UnMarshall & operator>>(UnMarshall &um, const std::tr1::unordered_map<T, V> &umap) {
+	uint32_t size;
+	um >> size;
+	for( uint32_t i = 0 ; i < size ; i++ )
+	{
+		std::pair<T, V> pair;
+		um >> pair;
+		umap.insert(pair);
+	}
+	return um;
+} */

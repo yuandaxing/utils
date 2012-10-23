@@ -1,0 +1,2685 @@
+cscope 15 $HOME/utils/algorithm/file_disk -q 0000000198 0000012467
+	@FileSplitter.cpp
+
+19 
+	~<as£¹.h
+>
+
+20 
+	~<”ºo.h
+>
+
+21 
+	~"FžeS¶™‹r.h
+"
+
+22 
+	~<sys/¡©.h
+>
+
+23 
+	~<io¡»am
+>
+
+24 
+	~<s¡»am
+>
+
+25 cÚ¡ 
+ušt64_t
+ 
+	gS¶iû
+ = 1024 * 1024 * 256;
+
+27 
+boÞ
+ 
+S¶™e
+(cÚ¡ *
+¤cFže
+, 
+ušt64_t
+ 
+ex³ùSize
+, cÚ¡ *
+de¡FžeP»fix
+,
+
+28 cÚ¡ *
+de¡FžeSuffix
+, 
+¡d
+::
+veùÜ
+<¡d::
+¡ršg
+> &
+¥l™s
+) {
+
+29 
+¡©
+ 
+©Œ
+;
+
+30 ifÐ
+¡©
+(
+¤cFže
+, &
+©Œ
+) < 0 )
+
+32 
+	g¡d
+::
+cout
+ << "can‚ot get state\n";
+
+35 
+ušt64_t
+ 
+	gtÙ®
+ = 
+©Œ
+.
+¡_size
+;
+
+36 
+	gnSliû
+ = 
+tÙ®
+ / 
+ex³ùSize
+ + 2;
+
+38 
+ušt64_t
+ 
+	g¡¬t
+ = 0;
+
+39 
+boÞ
+ 
+	g”rÜ
+ = 
+çl£
+;
+
+40  
+	gi
+ = 0 ; i < 
+	gnSliû
+ ; i++ )
+
+42 
+	g¡d
+::
+¡ršg
+ 
+‹mp
+(
+de¡FžeP»fix
+);
+
+43 
+	g¡d
+::
+o¡ršg¡»am
+ 
+oss1
+;
+
+44 
+	goss1
+ << '-' << 
+	gi
+ << '.' << 
+	gde¡FžeSuffix
+;
+
+45 
+	g‹mp
+ +ð
+oss1
+.
+¡r
+();
+
+47 
+FžeS¶™‹r
+ 
+f¥
+(
+¤cFže
+, 
+‹mp
+.
+c_¡r
+(), 
+¡¬t
+, 
+ex³ùSize
+);
+
+48 
+ušt64_t
+ 
+	gnCurSize
+ = 
+f¥
+.
+doS¶™
+();
+
+49 ifÐ
+	gnCurSize
+ > 0 )
+
+51 
+	g¥l™s
+.
+push_back
+(
+‹mp
+);
+
+52 
+	g¡¬t
+ +ð
+nCurSize
+;
+
+55 
+	g”rÜ
+ = 
+Œue
+;
+
+59 if(
+	g¡¬t
+ =ð
+tÙ®
+)
+
+60  
+Œue
+;
+
+61 if(
+	g”rÜ
+)
+
+62  
+	gçl£
+;
+
+64  
+	gçl£
+;
+
+67 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+69 
+¡d
+::
+veùÜ
+<¡d::
+¡ršg
+> 
+¥l™s
+;
+
+70 
+	`as£¹
+(
+	`S¶™e
+("‹¡.txt", 
+S¶iû
+,
+
+71 "¥l™", "txt", 
+¥l™s
+è=ð
+Œue
+);
+
+73 
+	}
+}
+
+	@FileSplitter.h
+
+18 
+	~<veùÜ
+>
+
+19 
+	~<¡dšt.h
+>
+
+20 
+	~<¡dio.h
+>
+
+21 
+	~<¡ršg
+>
+
+22 þas 
+	cFžeS¶™‹r
+ {
+
+23 
+	mpublic
+:
+
+24 
+FžeS¶™‹r
+(cÚ¡ *
+ifže
+, cÚ¡ *
+ofže
+, 
+ušt64_t
+ 
+off£t
+,
+
+25 
+ušt64_t
+ 
+size
+, cÚ¡ *
+d–im™”
+ = " \t\n" ) :
+
+26 
+fš_
+(
+fÝ’
+(
+ifže
+, "rb")), 
+fout_
+(fÝ’(
+ofže
+, "wb")),
+
+27 
+¡©e_
+(
+çl£
+), 
+d–im™”_
+(
+d–im™”
+), 
+ex³ùSize_
+(
+size
+), 
+	$size_
+(0) {
+
+28 
+¡©e_
+ = (
+fš_
+ !ð
+NULL
+ && 
+fout_
+ != NULL) ;
+
+29 ifÐ
+¡©e_
+ )
+
+31 
+¡©e_
+ = (
+	`f£ek
+(
+fš_
+, 
+off£t
+, 
+SEEK_SET
+) == 0);
+
+34 
+ušt64_t
+ 
+	$doS¶™
+() {
+
+35 
+ušt64_t
+ 
+n
+ = 
+ex³ùSize_
+ / 
+BuffSize
+ + 1;
+
+36  
+ušt64_t
+ 
+i
+ = 0 ; i < 
+n
+ ; i++ )
+
+38 
+nSize
+ = 
+	`ä—d
+(
+buf_
+, 1, 
+BuffSize
+, 
+fš_
+);
+
+39 if(
+nSize
+ > 0) {
+
+40 
+	`fwr™e
+(
+buf_
+, 1, 
+nSize
+, 
+fout_
+);
+
+41 
+size_
+ +ð
+nSize
+;
+
+44 
+i
+;
+
+45  
+i
+ = 0 ; i < 
+BuffSize
+ ; i++ )
+
+47 
+nSize
+ = 
+	`ä—d
+(
+buf_
+ + 
+i
+, 1, 1, 
+fš_
+);
+
+48 ifÐ
+nSize
+ !ð1 || 
+d–im™”_
+.
+	`fšd
+(
+buf_
+[
+i
+]è!ð
+¡d
+::
+¡ršg
+::
+Åos
+ )
+
+53 ifÐ
+i
+ > 0 )
+
+55 
+size_
+ +ð
+i
+;
+
+56 
+	`fwr™e
+(
+buf_
+, 1, 
+i
+, 
+fout_
+);
+
+58  
+size_
+;
+
+59 
+	}
+}
+
+61 ~
+	$FžeS¶™‹r
+() {
+
+62 if(
+fš_
+)
+
+63 
+	`fþo£
+(
+fš_
+);
+
+64 if(
+fout_
+)
+
+65 
+	`fþo£
+(
+fout_
+);
+
+66 
+	}
+}
+
+67 
+	g´iv©e
+:
+
+68 
+FILE
+ *
+fš_
+, *
+	gfout_
+;
+
+69 
+boÞ
+ 
+	g¡©e_
+;
+
+70 ’um { 
+	gBuffSize
+ = 4096};
+
+72 
+	gbuf_
+[
+BuffSize
+];
+
+73 
+	g¡d
+::
+¡ršg
+ 
+d–im™”_
+;
+
+74 
+ušt64_t
+ 
+	gex³ùSize_
+;
+
+75 
+ušt64_t
+ 
+	gsize_
+;
+
+78 
+boÞ
+ 
+S¶™e
+(cÚ¡ *
+¤cFže
+, 
+ušt64_t
+ 
+ex³ùSize
+, cÚ¡ *
+de¡FžeP»fix
+,
+
+79 cÚ¡ *
+de¡FžeSuffix
+, 
+¡d
+::
+veùÜ
+<¡d::
+¡ršg
+> &
+¥l™s
+);
+
+	@MergeFileList.h
+
+19 
+	~<io¡»am
+>
+
+20 
+	~<¡ršg
+>
+
+23 cÚ¡ *
+	gfžeLi¡
+[] = {
+
+47 cÚ¡ 
+	gNFže
+ = (
+fžeLi¡
+) / (fileList[0]);
+
+49 þas 
+	cI‹m
+ {
+
+50 
+	mpublic
+:
+
+51 
+¡d
+::
+¡ršg
+ 
+key_
+;
+
+52 
+	m¡d
+::
+¡ršg
+ 
+v®_
+;
+
+53 
+	mpublic
+:
+
+54 
+I‹m
+(cÚ¡ *
+key
+="", cÚ¡ *
+v
+="") :
+
+55 
+key_
+(
+key
+), 
+	$v®_
+(
+v
+) { }
+
+56 
+ä›nd
+ 
+¡d
+::
+o¡»am
+ & 
+Ý”©Ü
+<<(¡d::o¡»am &
+os
+, cÚ¡ 
+I‹m
+ &
+™em
+);
+
+57 
+ä›nd
+ 
+¡d
+::
+i¡»am
+ & 
+Ý”©Ü
+>>(¡d::i¡»am &
+is
+, 
+I‹m
+ &
+™em
+);
+
+58 
+ä›nd
+ 
+þass
+ 
+Com·»
+;
+
+59 
+	}
+};
+
+61 þas 
+	cCom·»
+ {
+
+62 
+	mpublic
+:
+
+63 
+boÞ
+ 
+	$Ý”©Ü
+()(cÚ¡ 
+I‹m
+ &
+lhs
+, cÚ¡ I‹m &
+rhs
+) const {
+
+64  
+lhs
+.
+key_
+ > 
+rhs
+.key_;
+
+66 
+	}
+};
+
+68 þas 
+	cCom·»1
+ {
+
+69 
+	mpublic
+:
+
+70 
+boÞ
+ 
+	$Ý”©Ü
+()(cÚ¡ 
+I‹m
+ &
+lhs
+, cÚ¡ I‹m &
+rhs
+) const {
+
+71  
+lhs
+.
+key_
+ < 
+rhs
+.key_;
+
+73 
+	}
+};
+
+75 
+	g¡d
+::
+o¡»am
+ & 
+Ý”©Ü
+<<(
+¡d
+::o¡»am &
+os
+, cÚ¡ 
+	gI‹m
+ &
+	g™em
+) {
+
+76 
+	gos
+ << 
+	g™em
+.
+	gkey_
+<< " " << i‹m.
+	gv®_
+ << " ";
+
+77  
+	gos
+;
+
+79 
+	g¡d
+::
+i¡»am
+ & 
+Ý”©Ü
+>>(
+¡d
+::i¡»am &
+is
+, 
+	gI‹m
+ &
+	g™em
+) {
+
+80 
+	gis
+ >> 
+	g™em
+.
+	gkey_
+ >> i‹m.
+	gv®_
+;
+
+81  
+	gis
+;
+
+	@MutiWayMerge.h
+
+20 
+	~<io¡»am
+>
+
+21 
+	~<f¡»am
+>
+
+22 
+	~<Œ1/memÜy
+>
+
+23 
+	~<queue
+>
+
+24 
+	~<veùÜ
+>
+
+25 
+	~<¡ršg
+>
+
+29 
+	g‹m¶©e
+ <
+ty³Çme
+ 
+	gI‹mTy³
+,y³Çm
+	gI‹mCom·»
+>
+
+30 
+þass
+ 
+	gM”geTask
+;
+
+31 
+	g‹m¶©e
+ <
+ty³Çme
+ 
+	gI‹mTy³
+,y³Çm
+	gI‹mCom·»
+>
+
+32 þas 
+	cEËmFže
+ {
+
+33 
+	m´iv©e
+:
+
+34 
+ä›nd
+ 
+þass
+ 
+M”geTask
+<
+I‹mTy³
+, 
+	mI‹mCom·»
+>;
+
+35 
+I‹mTy³
+ 
+	mcur_
+;
+
+36 
+	m¡d
+::
+if¡»am
+ 
+fš_
+;
+
+37 
+I‹mCom·»
+ 
+	mcomp_
+;
+
+38 
+	mpublic
+:
+
+39 
+ex¶ic™
+ 
+	$EËmFže
+(cÚ¡ *
+âame
+,
+
+40 
+I‹mCom·»
+ 
+comp
+è: 
+	`fš_
+(
+âame
+), 
+	$comp_
+(
+comp
+){
+
+41 if(
+fš_
+)
+
+42 
+fš_
+ >> 
+cur_
+;
+
+45 
+boÞ
+ 
+	$»ad
+( ) {
+
+46  
+fš_
+ >> 
+cur_
+;
+
+47 
+	}
+}
+
+49 
+boÞ
+ 
+	gÝ”©Ü
+<(cÚ¡ 
+	gEËmFže
+ &
+	gef
+) const {
+
+50  
+comp_
+(
+cur_
+, 
+ef
+.cur_);
+
+52 
+boÞ
+ 
+	$v®id
+() {
+
+53  
+fš_
+;
+
+54 
+	}
+}
+
+57 
+	g‹m¶©e
+ <
+ty³Çme
+ 
+	gI‹mTy³
+,y³Çm
+	gI‹mCom·»
+>
+
+58 þas 
+	cFžeCom·¿tÜ
+ {
+
+59 
+	mpublic
+:
+
+60 
+EËmFže
+<
+	tI‹mTy³
+, 
+	tI‹mCom·»
+> 
+	tEËmTy³
+;
+
+61 
+boÞ
+ 
+	$Ý”©Ü
+()(cÚ¡ 
+EËmTy³
+ * 
+lhs
+, cÚ¡ EËmTy³ * 
+rhs
+) const {
+
+63  ((*
+lhs
+è< (*
+rhs
+));
+
+65 
+	}
+};
+
+66 
+	g‹m¶©e
+ <
+ty³Çme
+ 
+	gI‹mTy³
+,y³Çm
+	gI‹mCom·»
+>
+
+67 þas 
+	cM”geTask
+ {
+
+68 
+	m´iv©e
+:
+
+69 
+EËmFže
+<
+	tI‹mTy³
+, 
+	tI‹mCom·»
+> 
+	tEËmTy³
+;
+
+70 
+	mFžeCom·¿tÜ
+<
+	tI‹mTy³
+, 
+	tI‹mCom·»
+> 
+	tCom·¿tÜ
+;
+
+71 
+	m¡d
+::
+	tŒ1
+::
+	tsh¬ed_±r
+<
+	tEËmTy³
+> 
+	t–emHÞd”
+;
+
+74 
+	m¡d
+::
+´iÜ™y_queue
+<
+EËmTy³
+ *, std::
+veùÜ
+<EËmTy³ *>, 
+	mCom·¿tÜ
+ > 
+	mfžeH—p_
+;
+
+75 
+	m¡d
+::
+veùÜ
+<
+–emHÞd”
+> 
+ve_
+;
+
+76 
+	m¡d
+::
+of¡»am
+ 
+fout
+;
+
+79 
+	mpublic
+:
+
+80 
+ex¶ic™
+ 
+	$M”geTask
+(cÚ¡ *
+s
+) :
+
+81 
+	$fout
+(
+s
+) { };
+
+82 
+	`M”geTask
+(cÚ¡ *
+out
+, cÚ¡ **
+šs
+, cÚ¡ **
+še
+,
+
+83 
+I‹mCom·»
+ 
+comp
+ = 
+	$I‹mCom·»
+()è: 
+	$fout
+(
+out
+) {
+
+84  ; 
+šs
+ < 
+še
+ ; ins++ )
+
+86 
+EËmTy³
+ *
+ef
+ = 
+Ãw
+ 
+	`EËmTy³
+(*
+šs
+, 
+comp
+);
+
+87 ifÐ!
+ef
+->
+	`v®id
+() )
+
+89 
+d–‘e
+ 
+ef
+;
+
+92 
+ve_
+.
+	`push_back
+(
+	`–emHÞd”
+(
+ef
+));
+
+93 
+fžeH—p_
+.
+	`push
+(
+ef
+);
+
+95 
+	}
+}
+
+97 
+	$doM”ge
+() {
+
+98 !
+fžeH—p_
+.
+	`em±y
+() ) {
+
+99 
+EËmTy³
+ *
+tÝ
+ = 
+fžeH—p_
+.
+	`tÝ
+();
+
+100 
+fout
+ << (
+tÝ
+->
+cur_
+) << " ";
+
+101 
+fžeH—p_
+.
+	`pÝ
+();
+
+102 if(
+tÝ
+->
+	`»ad
+()) {
+
+103 
+fžeH—p_
+.
+	`push
+(
+tÝ
+);
+
+106 
+	}
+}
+
+	@MutiWayMergeTest-2.cpp
+
+18 
+	~"M”geFžeLi¡.h
+"
+
+19 
+	~"MutiWayM”ge.h
+"
+
+21 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+23 
+M”geTask
+<, 
+¡d
+::
+g»©”
+<> > 
+	`mt
+("‹¡-sÜ‹d.txt", 
+fžeLi¡
+, fžeLi¡ + 
+NFže
+);
+
+24 
+mt
+.
+	`doM”ge
+();
+
+26 
+	}
+}
+
+	@MutiWayMergeTest-3.cpp
+
+19 
+	~"M”geFžeLi¡.h
+"
+
+20 
+	~"MutiWayM”ge.h
+"
+
+22 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+24 
+M”geTask
+<
+I‹m
+, 
+Com·»1
+> 
+	`mt
+("string-sorting.txt",
+
+25 
+fžeLi¡
+, fžeLi¡+
+NFže
+);
+
+26 
+mt
+.
+	`doM”ge
+();
+
+28 
+	}
+}
+
+	@Random.h
+
+20 #iâdeà 
+_RANDOM_H_INC
+
+
+21 
+	#_RANDOM_H_INC
+
+
+	)
+
+22 
+	~<¡ršg
+>
+
+23 
+	~<¡ršg.h
+>
+
+24 
+	~<time.h
+>
+
+25 
+usšg
+ 
+	g¡d
+::
+¡ršg
+;
+
+26 
+Çme¥aû
+ 
+	gth»adSaã
+{
+
+27 þas 
+	cRªdom
+{
+
+28 
+	gpublic
+:
+
+29 
+£ed
+() {
+
+30 
+¤ªd
+(
+time
+(
+NULL
+));
+
+33 
+¡ršg
+ 
+g‘RªdSŒšg
+(cÚ¡ sŒšg &
+¡r
+, 
+Ën
+) {
+
+34 
+¡ršg
+ 
+tmp
+(
+Ën
+, '0');
+
+35 
+	gi
+ = 0; i < 
+	gËn
+; i++) {
+
+36 
+	gtmp
+[
+i
+] = 
+¡r
+[
+¿nd
+(è% sŒ.
+size
+()];
+
+38  
+	gtmp
+;
+
+41 
+¡ršg
+ 
+g‘RªdSŒšg
+(
+Ën
+) {
+
+42  
+g‘RªdSŒšg
+(
+chs
+, 
+Ën
+);
+
+45 
+¡ršg
+ 
+g‘RªdDig™SŒšg
+(
+Ën
+) {
+
+46  
+g‘RªdSŒšg
+(
+dig™_chs
+, 
+Ën
+);
+
+73 
+	g´iv©e
+:
+
+74 cÚ¡ 
+¡ršg
+ 
+chs
+;
+
+75 cÚ¡ 
+¡ršg
+ 
+	gdig™_chs
+;
+
+78 cÚ¡ 
+¡ršg
+ 
+	gRªdom
+::
+chs
+="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+79 cÚ¡ 
+¡ršg
+ 
+	gRªdom
+::
+dig™_chs
+="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	@SplitSorting.h
+
+20 þas 
+	cS¶™SÜtšgTask
+ {
+
+	@fileTopK.cpp
+
+18 
+	~<queue
+>
+
+19 
+	~<¡dio.h
+>
+
+20 
+	~<¡ršg
+>
+
+21 
+	~<¡dio.h
+>
+
+22 
+	~<veùÜ
+>
+
+23 
+	g‹m¶©e
+ <
+ty³Çme
+ 
+	gT
+>
+
+24 þas 
+	cCom·»
+ {
+
+25 
+	mpublic
+:
+
+26 
+boÞ
+ 
+	$Ý”©Ü
+(è(cÚ¡ 
+T
+ & 
+lhs
+, cÚ¡ T &
+rhs
+) {
+
+27  
+lhs
+ > 
+rhs
+ ;
+
+29 
+	}
+};
+
+30 
+boÞ
+ 
+	$mÜe
+(
+lhs
+, 
+rhs
+) {
+
+31  
+lhs
+ > 
+rhs
+ ;
+
+32 
+	}
+}
+
+33 
+	g‹m¶©e
+ <
+ty³Çme
+ 
+	gT
+>
+
+34 þas 
+	cTÝKQueue
+ {
+
+35 
+	mpublic
+:
+
+36 
+	$TÝKQueue
+(cÚ¡ 
+size
+) :
+
+37 
+	`size_
+(
+size
+), 
+	$q_
+() { }
+
+38 
+	$add
+(cÚ¡ 
+T
+ &
+–e
+) {
+
+39 if(
+q_
+.
+	`size
+(è>ð
+¡©ic_ÿ¡
+<>(
+size_
+) ) {
+
+41 if(
+q_
+.
+	`tÝ
+(è< 
+–e
+) {
+
+42 
+q_
+.
+	`pÝ
+();
+
+43 
+q_
+.
+	`push
+(
+–e
+);
+
+46 
+q_
+.
+	`push
+(
+–e
+) ;
+
+48 
+	}
+}
+
+50 cÚ¡ 
+	gT
+& 
+	$tÝ
+() const {
+
+51  
+q_
+.
+	`tÝ
+();
+
+52 
+	}
+}
+
+53 
+	$pÝ
+() {
+
+54 
+q_
+.
+	`pÝ
+();
+
+55 
+	}
+}
+
+57 
+boÞ
+ 
+	$isEm±y
+() {
+
+58  
+q_
+.
+	`em±y
+();
+
+59 
+	}
+}
+
+60 
+	g´iv©e
+:
+
+61 cÚ¡ 
+size_
+;
+
+62 
+	g¡d
+::
+´iÜ™y_queue
+<
+T
+, std::
+veùÜ
+<T>, 
+	gCom·»
+<
+	gT
+> > 
+	gq_
+;
+
+64 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+66 cÚ¡ 
+nbuff
+ = 1024 * 512;
+
+67 
+¡d
+::
+¡ršg
+ 
+¡r
+ = "testfile.txt";
+
+68 
+FILE
+ *
+š
+ = 
+	`fÝ’
+(
+¡r
+.
+	`c_¡r
+(), "r");
+
+69 iàÐ
+š
+ =ð
+NULL
+ ) {
+
+70 
+	`årštf
+(
+¡d”r
+, "cannot open„ead file");
+
+72 *
+buff
+ = 
+Ãw
+ [
+nbuff
+];
+
+73 
+	`£tbufãr
+(
+š
+, 
+buff
+, 
+nbuff
+);
+
+75 
+TÝKQueue
+<> 
+	`tkq
+(10);
+
+76 
+cur
+ = 0;
+
+77  
+	`fsÿnf
+(
+š
+, "%u", &
+cur
+) > 0 ) {
+
+78 
+tkq
+.
+	`add
+(
+cur
+);
+
+81 
+d–‘e
+[] 
+buff
+;
+
+82 
+	`fþo£
+(
+š
+);
+
+84  !
+tkq
+.
+	`isEm±y
+() ) {
+
+85 
+	`årštf
+(
+¡d”r
+, "%u ", 
+tkq
+.
+	`tÝ
+() );
+
+86 
+tkq
+.
+	`pÝ
+();
+
+89 
+	`årštf
+(
+¡d”r
+, "\n");
+
+92 
+	}
+}
+
+	@genNub_1G-2.cpp
+
+19 
+	~<time.h
+>
+
+20 
+	~<¡dio.h
+>
+
+21 
+	~<¡ršg
+>
+
+22 
+	~<£t
+>
+
+23 
+	~"¿ndom.h
+"
+
+24 
+	~"¡dlib.h
+"
+
+25 
+	~"M”geFžeLi¡.h
+"
+
+27 cÚ¡ 
+	gG1
+ = 1024 * 1024 * 1024;
+
+28 cÚ¡ 
+	gnNum
+ = 
+G1
+ / 100 ;
+
+29 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+31 
+¡d
+::
+muÉi£t
+<> 
+msi
+;
+
+32 
+time_t
+ 
+cur
+ = 
+	`time
+(0);
+
+33 
+FILE
+ *
+out
+[
+NFže
+];
+
+34 
+i
+ = 0; i < 
+NFže
+; i++) {
+
+35 
+out
+[
+i
+] = 
+	`fÝ’
+(
+fžeLi¡
+[i], "wa");
+
+36 iàÐ
+out
+[
+i
+] =ð
+NULL
+ ) {
+
+37 
+	`årštf
+(
+¡d”r
+, "cannot open file");
+
+38 
+	`abÜt
+();
+
+42 
+Ëv–db
+::
+Rªdom_Lev–
+ 
+	`¿nd
+(
+cur
+);
+
+43 
+i
+ = 0;
+
+44  
+i
+ = 0; 
+¡©ic_ÿ¡
+<>(iè< 
+nNum
+; i += 1 ) {
+
+45 
+msi
+.
+	`š£¹
+(
+¿nd
+.
+	`Next
+());
+
+48 
+i
+ = 0; i < 
+NFže
+; i++) {
+
+49 autØ
+™”
+ = 
+msi
+.
+	`begš
+(); i‹¸!ðmsi.
+	`’d
+(); iter++) {
+
+50 
+	`årštf
+(
+out
+[
+i
+], "%u ", *
+™”
+);
+
+52 
+	`fþo£
+(
+out
+[
+i
+]);
+
+56 
+	}
+}
+
+	@genNub_1G-3.cpp
+
+19 
+	~<time.h
+>
+
+20 
+	~<¡dio.h
+>
+
+21 
+	~<¡ršg
+>
+
+22 
+	~<£t
+>
+
+23 
+	~"Rªdom.h
+"
+
+24 
+	~"¡dlib.h
+"
+
+25 
+	~"M”geFžeLi¡.h
+"
+
+27 cÚ¡ 
+	gG1
+ = 1024 * 1024 * 1024;
+
+28 cÚ¡ 
+	gnNum
+ = 
+G1
+ / 1000 ;
+
+29 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+31 
+¡d
+::
+muÉi£t
+<
+I‹m
+, 
+Com·»
+> 
+msi
+;
+
+32 
+FILE
+ *
+out
+[
+NFže
+];
+
+33 
+i
+ = 0; i < 
+NFže
+; i++) {
+
+34 
+out
+[
+i
+] = 
+	`fÝ’
+(
+fžeLi¡
+[i], "w");
+
+35 iàÐ
+out
+[
+i
+] =ð
+NULL
+ ) {
+
+36 
+	`årštf
+(
+¡d”r
+, "cannot open file");
+
+37 
+	`abÜt
+();
+
+41 
+th»adSaã
+::
+Rªdom
+ 
+¿nd
+;
+
+42 
+¿nd
+.
+	`£ed
+();
+
+43 
+i
+ = 0;
+
+44  
+i
+ = 0; 
+¡©ic_ÿ¡
+<>(iè< 
+nNum
+; i += 1 ) {
+
+45 
+msi
+.
+	`š£¹
+(
+	`I‹m
+(
+¿nd
+.
+	`g‘RªdDig™SŒšg
+(10).
+	`c_¡r
+(),
+
+46 
+¿nd
+.
+	`g‘RªdDig™SŒšg
+(10).
+	`c_¡r
+()));
+
+49 
+i
+ = 0; i < 
+NFže
+; i++) {
+
+50 autØ
+™”
+ = 
+msi
+.
+	`begš
+(); i‹¸!ðmsi.
+	`’d
+(); iter++) {
+
+51 
+	`årštf
+(
+out
+[
+i
+], "% % ", 
+™”
+->
+key_
+.
+	`c_¡r
+(),
+
+52 
+™”
+->
+v®_
+.
+	`c_¡r
+());
+
+54 
+	`fþo£
+(
+out
+[
+i
+]);
+
+58 
+	}
+}
+
+	@genNub_1G-testSplit.cpp
+
+19 
+	~<time.h
+>
+
+20 
+	~<¡dio.h
+>
+
+21 
+	~<¡ršg
+>
+
+22 
+	~"¿ndom.h
+"
+
+23 
+	~"¡dlib.h
+"
+
+25 cÚ¡ 
+	gG1
+ = 1024 * 1024 * 1024;
+
+26 cÚ¡ 
+	gnNum
+ = 
+G1
+ / 2;
+
+27 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+29 cÚ¡ 
+¡d
+::
+¡ršg
+ 
+fže
+ = "test.txt";
+
+30 
+time_t
+ 
+cur
+ = 
+	`time
+(0);
+
+31 
+FILE
+ *
+out
+ = 
+	`fÝ’
+(
+fže
+.
+	`c_¡r
+(), "wa");
+
+32 iàÐ
+out
+ =ð
+NULL
+ ) {
+
+33 
+	`årštf
+(
+¡d”r
+, "cannot open file");
+
+34 
+	`abÜt
+();
+
+37 
+Ëv–db
+::
+Rªdom_Lev–
+ 
+	`¿nd
+(
+cur
+);
+
+38 
+i
+ = 0;
+
+39  
+i
+ = 0; 
+¡©ic_ÿ¡
+<>(iè< 
+nNum
+; i += 1 ) {
+
+40 
+	`årštf
+(
+out
+, "%u ", 
+¿nd
+.
+	`Next
+());
+
+42 
+	`fþo£
+(
+out
+);
+
+45 
+	}
+}
+
+	@genNub_1G.cpp
+
+19 
+	~<time.h
+>
+
+20 
+	~<¡dio.h
+>
+
+21 
+	~<¡ršg
+>
+
+22 
+	~"¿ndom.h
+"
+
+23 
+	~"¡dlib.h
+"
+
+25 cÚ¡ 
+	gG1
+ = 1024 * 1024 * 1024;
+
+26 cÚ¡ 
+	gnNum
+ = 
+G1
+ / 9 ;
+
+27 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+29 cÚ¡ 
+¡d
+::
+¡ršg
+ 
+fže
+ = "testfile.txt";
+
+30 
+time_t
+ 
+cur
+ = 
+	`time
+(0);
+
+31 
+FILE
+ *
+out
+ = 
+	`fÝ’
+(
+fže
+.
+	`c_¡r
+(), "wa");
+
+32 iàÐ
+out
+ =ð
+NULL
+ ) {
+
+33 
+	`årštf
+(
+¡d”r
+, "cannot open file");
+
+34 
+	`abÜt
+();
+
+37 
+Ëv–db
+::
+Rªdom_Lev–
+ 
+	`¿nd
+(
+cur
+);
+
+38 
+i
+ = 0;
+
+39  
+i
+ = 0; 
+¡©ic_ÿ¡
+<>(iè< 
+nNum
+; i += 1 ) {
+
+40 
+	`årštf
+(
+out
+, "%u ", 
+¿nd
+.
+	`Next
+());
+
+42 
+	`fþo£
+(
+out
+);
+
+45 
+	}
+}
+
+	@random.h
+
+5 #iâdeà
+STORAGE_LEVELDB_UTIL_RANDOM_H_
+
+
+6 
+	#STORAGE_LEVELDB_UTIL_RANDOM_H_
+
+
+	)
+
+8 
+	~<¡dšt.h
+>
+
+10 
+Çme¥aû
+ 
+	gËv–db
+ {
+
+15 þas 
+	cRªdom_Lev–
+ {
+
+16 
+	g´iv©e
+:
+
+17 
+ušt32_t
+ 
+£ed_
+;
+
+18 
+	gpublic
+:
+
+19 
+ex¶ic™
+ 
+Rªdom_Lev–
+(
+ušt32_t
+ 
+s
+è: 
+£ed_
+(s & 0x7fffffffu) { }
+
+20 
+ušt32_t
+ 
+Next
+() {
+
+21 cÚ¡ 
+ušt32_t
+ 
+M
+ = 2147483647L;
+
+22 cÚ¡ 
+ušt64_t
+ 
+	gA
+ = 16807;
+
+29 
+ušt64_t
+ 
+	g´oduù
+ = 
+£ed_
+ * 
+A
+;
+
+32 
+	g£ed_
+ = 
+¡©ic_ÿ¡
+<
+ušt32_t
+>((
+´oduù
+ >> 31è+ (´oduù & 
+M
+));
+
+36 ià(
+	g£ed_
+ > 
+	gM
+) {
+
+37 
+	g£ed_
+ -ð
+M
+;
+
+39  
+	g£ed_
+;
+
+43 
+ušt32_t
+ 
+UnifÜm
+(
+n
+è{  
+Next
+(è% 
+	gn
+; }
+
+47 
+boÞ
+ 
+OÃIn
+(
+n
+è{  (
+Next
+(è% 
+	gn
+) == 0; }
+
+52 
+ušt32_t
+ 
+Skewed
+(
+max_log
+) {
+
+53  
+UnifÜm
+(1 << UnifÜm(
+max_log
+ + 1));
+
+	@
+1
+.
+0
+14
+225
+FileSplitter.cpp
+FileSplitter.h
+MergeFileList.h
+MutiWayMerge.h
+MutiWayMergeTest-2.cpp
+MutiWayMergeTest-3.cpp
+Random.h
+SplitSorting.h
+fileTopK.cpp
+genNub_1G-2.cpp
+genNub_1G-3.cpp
+genNub_1G-testSplit.cpp
+genNub_1G.cpp
+random.h

@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR      =ar$/;"	m
+AS	Makefile	/^AS      =as$/;"	m
+BuffSize	FileSplitter.h	/^		enum { BuffSize = 4096};$/;"	e	enum:FileSplitter::__anon1
+CC	Makefile	/^CC      =g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS =  -g -Wall -pedantic -std=c++0x -D_FILE_OFFSET_BITS=64$/;"	m
+Comparator	MutiWayMerge.h	/^		typedef FileComparator<ItemType, ItemCompare> Comparator;$/;"	t	class:MergeTask
+Compare	MergeFileList.h	/^class Compare {$/;"	c
+Compare	fileTopK.cpp	/^class Compare {$/;"	c	file:
+Compare1	MergeFileList.h	/^class Compare1 {$/;"	c
+ElemFile	MutiWayMerge.h	/^		explicit ElemFile(const char *fname, $/;"	f	class:ElemFile
+ElemFile	MutiWayMerge.h	/^class ElemFile {$/;"	c
+ElemType	MutiWayMerge.h	/^		typedef ElemFile<ItemType, ItemCompare>  ElemType;$/;"	t	class:MergeTask
+ElemType	MutiWayMerge.h	/^		typedef ElemFile<ItemType, ItemCompare> ElemType;$/;"	t	class:FileComparator
+FileComparator	MutiWayMerge.h	/^class FileComparator {$/;"	c
+FileSplitter	FileSplitter.h	/^		FileSplitter(const char *ifile, const char *ofile, uint64_t offset, $/;"	f	class:FileSplitter
+FileSplitter	FileSplitter.h	/^class FileSplitter {$/;"	c
+G1	genNub_1G-2.cpp	/^const unsigned int G1 = 1024 * 1024 * 1024;$/;"	v
+G1	genNub_1G-3.cpp	/^const unsigned int G1 = 1024 * 1024 * 1024;$/;"	v
+G1	genNub_1G-testSplit.cpp	/^const unsigned int G1 = 1024 * 1024 * 1024;$/;"	v
+G1	genNub_1G.cpp	/^const unsigned int G1 = 1024 * 1024 * 1024;$/;"	v
+Item	MergeFileList.h	/^		Item(const char *key="", const char *v="") :$/;"	f	class:Item
+Item	MergeFileList.h	/^class Item {$/;"	c
+LD	Makefile	/^LD      =ld$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+MergeTask	MutiWayMerge.h	/^		MergeTask(const char *out, const char **ins, const char **ine, $/;"	f	class:MergeTask
+MergeTask	MutiWayMerge.h	/^		explicit MergeTask(const char *s) :$/;"	f	class:MergeTask
+MergeTask	MutiWayMerge.h	/^class MergeTask {$/;"	c
+NFile	MergeFileList.h	/^const int NFile = sizeof(fileList) \/ sizeof(fileList[0]);$/;"	v
+Next	random.h	/^  uint32_t Next() {$/;"	f	class:leveldb::Random_Level
+OBJS	Makefile	/^OBJS := $(SRCS:.cpp=.exe)$/;"	m
+OneIn	random.h	/^  bool OneIn(int n) { return (Next() % n) == 0; }$/;"	f	class:leveldb::Random_Level
+Random	Random.h	/^class Random{$/;"	c	namespace:threadSafe
+Random_Level	random.h	/^  explicit Random_Level(uint32_t s) : seed_(s & 0x7fffffffu) { }$/;"	f	class:leveldb::Random_Level
+Random_Level	random.h	/^class Random_Level {$/;"	c	namespace:leveldb
+SRCS	Makefile	/^SRCS 	=  $(wildcard *.cpp)$/;"	m
+STORAGE_LEVELDB_UTIL_RANDOM_H_	random.h	6;"	d
+Skewed	random.h	/^  uint32_t Skewed(int max_log) {$/;"	f	class:leveldb::Random_Level
+Splice	FileSplitter.cpp	/^const uint64_t Splice = 1024 * 1024 * 256;$/;"	v
+SplitSortingTask	SplitSorting.h	/^class SplitSortingTask {$/;"	c
+Splite	FileSplitter.cpp	/^bool Splite(const char *srcFile, uint64_t expectSize, const char *destFilePrefix, $/;"	f
+TopKQueue	fileTopK.cpp	/^		TopKQueue(const int size) :$/;"	f	class:TopKQueue
+TopKQueue	fileTopK.cpp	/^class TopKQueue {$/;"	c	file:
+Uniform	random.h	/^  uint32_t Uniform(int n) { return Next() % n; }$/;"	f	class:leveldb::Random_Level
+_RANDOM_H_INC	Random.h	21;"	d
+add	fileTopK.cpp	/^		void add(const T &ele) {$/;"	f	class:TopKQueue
+buf_	FileSplitter.h	/^		char buf_[BuffSize];$/;"	m	class:FileSplitter
+chs	Random.h	/^		static const string chs;$/;"	m	class:threadSafe::Random
+chs	Random.h	/^const string Random::chs="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";$/;"	m	class:threadSafe::Random
+comp_	MutiWayMerge.h	/^		ItemCompare comp_;$/;"	m	class:ElemFile
+cur_	MutiWayMerge.h	/^		ItemType cur_;$/;"	m	class:ElemFile
+delimiter_	FileSplitter.h	/^		std::string delimiter_;$/;"	m	class:FileSplitter
+digit_chs	Random.h	/^		static const string digit_chs;$/;"	m	class:threadSafe::Random
+digit_chs	Random.h	/^const string Random::digit_chs="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";$/;"	m	class:threadSafe::Random
+doMerge	MutiWayMerge.h	/^		void doMerge() {$/;"	f	class:MergeTask
+doSplit	FileSplitter.h	/^		uint64_t doSplit() {$/;"	f	class:FileSplitter
+elemHolder	MutiWayMerge.h	/^		typedef std::tr1::shared_ptr<ElemType> elemHolder;$/;"	t	class:MergeTask
+expectSize_	FileSplitter.h	/^		uint64_t expectSize_;$/;"	m	class:FileSplitter
+fileHeap_	MutiWayMerge.h	/^		std::priority_queue<ElemType *, std::vector<ElemType *>, Comparator > fileHeap_;$/;"	m	class:MergeTask
+fileList	MergeFileList.h	/^const char *fileList[] = {$/;"	v
+fin_	FileSplitter.h	/^		FILE *fin_, *fout_;$/;"	m	class:FileSplitter
+fin_	MutiWayMerge.h	/^		std::ifstream fin_;$/;"	m	class:ElemFile
+fout	MutiWayMerge.h	/^		std::ofstream fout;$/;"	m	class:MergeTask
+fout_	FileSplitter.h	/^		FILE *fin_, *fout_;$/;"	m	class:FileSplitter
+getRandDigitString	Random.h	/^		static string getRandDigitString(int len) {$/;"	f	class:threadSafe::Random
+getRandString	Random.h	/^		static string getRandString(const string &str, int len) {$/;"	f	class:threadSafe::Random
+getRandString	Random.h	/^		static string getRandString(int len) {$/;"	f	class:threadSafe::Random
+isEmpty	fileTopK.cpp	/^		bool isEmpty() {$/;"	f	class:TopKQueue
+key_	MergeFileList.h	/^		std::string key_;$/;"	m	class:Item
+leveldb	random.h	/^namespace leveldb {$/;"	n
+main	FileSplitter.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	MutiWayMergeTest-2.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	MutiWayMergeTest-3.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	fileTopK.cpp	/^int main ( int argc, char *argv[] )$/;"	f
+main	genNub_1G-2.cpp	/^int main ( int argc, char *argv[] )$/;"	f
+main	genNub_1G-3.cpp	/^int main ( int argc, char *argv[] )$/;"	f
+main	genNub_1G-testSplit.cpp	/^int main ( int argc, char *argv[] )$/;"	f
+main	genNub_1G.cpp	/^int main ( int argc, char *argv[] )$/;"	f
+more	fileTopK.cpp	/^bool more(unsigned int lhs, unsigned int rhs) {$/;"	f
+nNum	genNub_1G-2.cpp	/^const unsigned int nNum = G1 \/ 100 ;$/;"	v
+nNum	genNub_1G-3.cpp	/^const unsigned int nNum = G1 \/ 1000 ;$/;"	v
+nNum	genNub_1G-testSplit.cpp	/^const unsigned int nNum = G1 \/ 2;$/;"	v
+nNum	genNub_1G.cpp	/^const unsigned int nNum = G1 \/ 9 ;$/;"	v
+operator ()	MergeFileList.h	/^		bool operator()(const Item &lhs, const Item &rhs) const {$/;"	f	class:Compare
+operator ()	MergeFileList.h	/^		bool operator()(const Item &lhs, const Item &rhs) const {$/;"	f	class:Compare1
+operator ()	MutiWayMerge.h	/^		bool operator()(const ElemType * lhs, const ElemType * rhs) const {$/;"	f	class:FileComparator
+operator ()	fileTopK.cpp	/^		bool operator() (const T & lhs, const T &rhs) {$/;"	f	class:Compare
+operator <	MutiWayMerge.h	/^		bool operator<(const ElemFile &ef) const {$/;"	f	class:ElemFile
+operator <<	MergeFileList.h	/^std::ostream & operator<<(std::ostream &os, const Item &item) {$/;"	f
+operator >>	MergeFileList.h	/^std::istream & operator>>(std::istream &is, Item &item) {$/;"	f
+pop	fileTopK.cpp	/^		void pop() {$/;"	f	class:TopKQueue
+q_	fileTopK.cpp	/^		std::priority_queue<T, std::vector<T>, Compare<T> > q_;$/;"	m	class:TopKQueue	file:
+read	MutiWayMerge.h	/^		bool read( ) {$/;"	f	class:ElemFile
+seed	Random.h	/^		static void seed() {$/;"	f	class:threadSafe::Random
+seed_	random.h	/^  uint32_t seed_;$/;"	m	class:leveldb::Random_Level
+size_	FileSplitter.h	/^		uint64_t size_;$/;"	m	class:FileSplitter
+size_	fileTopK.cpp	/^		const int size_;$/;"	m	class:TopKQueue	file:
+state_	FileSplitter.h	/^		bool state_;$/;"	m	class:FileSplitter
+threadSafe	Random.h	/^namespace threadSafe{$/;"	n
+top	fileTopK.cpp	/^		const T& top() const {$/;"	f	class:TopKQueue
+val_	MergeFileList.h	/^		std::string val_;$/;"	m	class:Item
+valid	MutiWayMerge.h	/^		bool valid() {$/;"	f	class:ElemFile
+ve_	MutiWayMerge.h	/^		std::vector<elemHolder> ve_;$/;"	m	class:MergeTask
+~FileSplitter	FileSplitter.h	/^		~FileSplitter() {$/;"	f	class:FileSplitter

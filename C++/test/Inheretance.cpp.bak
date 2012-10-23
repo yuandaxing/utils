@@ -1,0 +1,39 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  Inheretance.cpp
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  2012年10月14日 13时39分48秒
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yuan DaXing (http://goo.gl/VpwzO), mryuan0@gmail.com
+ *   Organization:  
+ *
+ * =====================================================================================
+ */
+
+#include <iostream>
+template <typename T> 
+class MakeFinal
+{
+	friend  class T;
+	private:
+	MakeFinal() {}
+	~MakeFinal() {}
+};
+
+class FinalClass2 : virtual public MakeFinal<FinalClass2>
+{
+	public:
+		FinalClass2() {}
+		~FinalClass2() {}
+};
+int main(int argc, char *argv[])
+{
+	FinalClass2 fc;
+	return 0;
+}

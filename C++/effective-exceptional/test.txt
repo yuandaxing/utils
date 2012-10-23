@@ -1,0 +1,6 @@
+Base::f(double)
+Derived::f(complex)
+Base::f(double)
+10
+Derived::g() 20
+Derived::g() 10

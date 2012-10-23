@@ -1,0 +1,418 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR      =ar$/;"	m
+AS	Makefile	/^AS      =as$/;"	m
+ASSERT_EQ	test/testharness.h	98;"	d
+ASSERT_GE	test/testharness.h	100;"	d
+ASSERT_GT	test/testharness.h	101;"	d
+ASSERT_LE	test/testharness.h	102;"	d
+ASSERT_LT	test/testharness.h	103;"	d
+ASSERT_NE	test/testharness.h	99;"	d
+ASSERT_OK	test/testharness.h	97;"	d
+ASSERT_TRUE	test/testharness.h	96;"	d
+Allocate	arena.h	/^inline char* Arena::Allocate(size_t bytes) {$/;"	f	class:leveldb::Arena
+AllocateAligned	arena.cc	/^char* Arena::AllocateAligned(size_t bytes) {$/;"	f	class:leveldb::Arena
+AllocateFallback	arena.cc	/^char* Arena::AllocateFallback(size_t bytes) {$/;"	f	class:leveldb::Arena
+AllocateNewBlock	arena.cc	/^char* Arena::AllocateNewBlock(size_t block_bytes) {$/;"	f	class:leveldb::Arena
+Arena	arena.cc	/^Arena::Arena() {$/;"	f	class:leveldb::Arena
+Arena	arena.h	/^class Arena {$/;"	c	namespace:leveldb
+AtomicInteger	AtomicInteger.h	/^		explicit AtomicInteger(const T &v = 0):$/;"	f	class:threadSafe::AtomicInteger
+AtomicInteger	AtomicInteger.h	/^class AtomicInteger: private boost::noncopyable {$/;"	c	namespace:threadSafe
+BIG_CONSTANT	MurmurHash3.cc	26;"	d	file:
+BIG_CONSTANT	MurmurHash3.cc	47;"	d	file:
+BINARY_OP	test/testharness.h	68;"	d
+BINARY_OP	test/testharness.h	84;"	d
+BlockingQueue	Queue.h	/^		BlockingQueue(): list(), m(), notEmpty(m) { }$/;"	f	class:threadSafe::BlockingQueue
+BlockingQueue	Queue.h	/^class BlockingQueue: private boost::noncopyable{$/;"	c	namespace:threadSafe
+BloomFilter	BloomFilter.h	/^		explicit BloomFilter ( uint64_t nkey, $/;"	f	class:threadSafe::BloomFilter
+BloomFilter	BloomFilter.h	/^class BloomFilter{$/;"	c	namespace:threadSafe
+BoundedQueue	Queue.h	/^			BoundedQueue(): notFull(m), notEmpty(m) { }$/;"	f	class:threadSafe::BoundedQueue
+BoundedQueue	Queue.h	/^class BoundedQueue: boost::noncopyable {$/;"	c	namespace:threadSafe
+CC	Makefile	/^CC      =g++$/;"	m
+CCFLAGS	Makefile	/^CCFLAGS =  -std=c++0x -g -Os$/;"	m
+Coding	test/coding_test.cc	/^class Coding { };$/;"	c	namespace:leveldb	file:
+CompressibleString	test/testutil.cc	/^extern Slice CompressibleString(Random* rnd, double compressed_fraction,$/;"	f	namespace:leveldb::test
+Condition	LockService.h	/^		explicit Condition(Mutex &mutex): m(mutex),$/;"	f	class:threadSafe::Condition
+Condition	LockService.h	/^class Condition: private boost::noncopyable {$/;"	c	namespace:threadSafe
+DEBUG	Logger.h	140;"	d
+DEBUG_	Logger.h	/^			DEBUG_, $/;"	e	enum:threadSafe::Logger::LoggerLevel
+DecodeFixed32	coding.h	/^inline uint32_t DecodeFixed32(const char* ptr) {$/;"	f	namespace:leveldb
+DecodeFixed64	coding.h	/^inline uint64_t DecodeFixed64(const char* ptr) {$/;"	f	namespace:leveldb
+DoubleMurmur	DoubleMurmur.h	/^		DoubleMurmur(const char *data, int len):$/;"	f	class:DoubleMurmur
+DoubleMurmur	DoubleMurmur.h	/^class DoubleMurmur{$/;"	c
+E	BloomFilter.h	/^		static const double	E;$/;"	m	class:threadSafe::BloomFilter
+E	BloomFilter.h	/^const  double BloomFilter::E = 2.71828182845904523536;$/;"	m	class:threadSafe::BloomFilter
+ERR	Logger.h	143;"	d
+ERR_	Logger.h	/^			ERR_$/;"	e	enum:threadSafe::Logger::LoggerLevel
+EncodeFixed32	coding.cc	/^void EncodeFixed32(char* buf, uint32_t value) {$/;"	f	namespace:leveldb
+EncodeFixed64	coding.cc	/^void EncodeFixed64(char* buf, uint64_t value) {$/;"	f	namespace:leveldb
+EncodeVarint32	coding.cc	/^char* EncodeVarint32(char* dst, uint32_t v) {$/;"	f	namespace:leveldb
+EncodeVarint64	coding.cc	/^char* EncodeVarint64(char* dst, uint64_t v) {$/;"	f	namespace:leveldb
+ErrorEnv	test/testutil.h	/^  ErrorEnv() : EnvWrapper(Env::Default()),$/;"	f	class:leveldb::test::ErrorEnv
+ErrorEnv	test/testutil.h	/^class ErrorEnv : public EnvWrapper {$/;"	c	namespace:leveldb::test
+FORCE_INLINE	MurmurHash3.cc	19;"	d	file:
+FORCE_INLINE	MurmurHash3.cc	32;"	d	file:
+GetLengthPrefixedSlice	coding.cc	/^bool GetLengthPrefixedSlice(Slice* input, Slice* result) {$/;"	f	namespace:leveldb
+GetLengthPrefixedSlice	coding.cc	/^const char* GetLengthPrefixedSlice(const char* p, const char* limit,$/;"	f	namespace:leveldb
+GetVarint32	coding.cc	/^bool GetVarint32(Slice* input, uint32_t* value) {$/;"	f	namespace:leveldb
+GetVarint32Ptr	coding.h	/^inline const char* GetVarint32Ptr(const char* p,$/;"	f	namespace:leveldb
+GetVarint32PtrFallback	coding.cc	/^const char* GetVarint32PtrFallback(const char* p,$/;"	f	namespace:leveldb
+GetVarint64	coding.cc	/^bool GetVarint64(Slice* input, uint64_t* value) {$/;"	f	namespace:leveldb
+GetVarint64Ptr	coding.cc	/^const char* GetVarint64Ptr(const char* p, const char* limit, uint64_t* value) {$/;"	f	namespace:leveldb
+Hash	hash.cc	/^uint32_t Hash(const char* data, size_t n, uint32_t seed) {$/;"	f	namespace:leveldb
+INFO	Logger.h	141;"	d
+INFO_	Logger.h	/^			INFO_ ,$/;"	e	enum:threadSafe::Logger::LoggerLevel
+Is	test/testharness.h	/^  Tester& Is(bool b, const char* msg) {$/;"	f	class:leveldb::test::Tester
+IsOk	test/testharness.h	/^  Tester& IsOk(const Status& s) {$/;"	f	class:leveldb::test::Tester
+K	BloomFilter.h	/^		uint64_t K;$/;"	m	class:threadSafe::BloomFilter
+LD	Makefile	/^LD      =ld$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = -lpthread$/;"	m
+Logger	Logger.h	/^		Logger(LoggerLevel level, const char *fileName_, const char *funName_, int lineNo_):$/;"	f	class:threadSafe::Logger
+Logger	Logger.h	/^class Logger{$/;"	c	namespace:threadSafe
+LoggerLevel	Logger.h	/^		enum LoggerLevel{$/;"	g	class:threadSafe::Logger
+LoggerName	Logger.h	/^		static const char *LoggerName;$/;"	m	class:threadSafe::Logger
+LoggerName	Logger.h	/^const char * Logger::LoggerName = NULL;$/;"	m	class:threadSafe::Logger
+M	BloomFilter.h	/^		uint64_t M;$/;"	m	class:threadSafe::BloomFilter
+MapFile	MapFile.h	/^MapFile::MapFile ( bool rw_, const string & fileName, $/;"	f	class:threadSafe::MapFile
+MapFile	MapFile.h	/^class MapFile {$/;"	c	namespace:threadSafe
+MemoryUsage	arena.h	/^  size_t MemoryUsage() const {$/;"	f	class:leveldb::Arena
+MurmurHash3_x64_128	MurmurHash3.cc	/^void MurmurHash3_x64_128 ( const void * key, const int len,$/;"	f
+MurmurHash3_x86_128	MurmurHash3.cc	/^void MurmurHash3_x86_128 ( const void * key, const int len,$/;"	f
+MurmurHash3_x86_32	MurmurHash3.cc	/^void MurmurHash3_x86_32 ( const void * key, int len,$/;"	f
+Mutex	LockService.h	/^		Mutex(): mutex(PTHREAD_MUTEX_INITIALIZER) { }$/;"	f	class:threadSafe::Mutex
+Mutex	LockService.h	/^class Mutex: private boost::noncopyable {$/;"	c	namespace:threadSafe
+MutexGuard	LockService.h	/^		explicit MutexGuard(Mutex &mutex): m(mutex) { m.lock(); }$/;"	f	class:threadSafe::MutexGuard
+MutexGuard	LockService.h	/^class MutexGuard: private boost::noncopyable {$/;"	c	namespace:threadSafe
+NewWritableFile	test/testutil.h	/^  virtual Status NewWritableFile(const std::string& fname,$/;"	f	class:leveldb::test::ErrorEnv
+Next	random.h	/^  uint32_t Next() {$/;"	f	class:leveldb::Random_Level
+OBJS	Makefile	/^OBJS := $(SRCS:.cc=.o)$/;"	m
+OneIn	random.h	/^  bool OneIn(int n) { return (Next() % n) == 0; }$/;"	f	class:leveldb::Random_Level
+PutFixed32	coding.cc	/^void PutFixed32(std::string* dst, uint32_t value) {$/;"	f	namespace:leveldb
+PutFixed64	coding.cc	/^void PutFixed64(std::string* dst, uint64_t value) {$/;"	f	namespace:leveldb
+PutLengthPrefixedSlice	coding.cc	/^void PutLengthPrefixedSlice(std::string* dst, const Slice& value) {$/;"	f	namespace:leveldb
+PutVarint32	coding.cc	/^void PutVarint32(std::string* dst, uint32_t v) {$/;"	f	namespace:leveldb
+PutVarint64	coding.cc	/^void PutVarint64(std::string* dst, uint64_t v) {$/;"	f	namespace:leveldb
+Q	test/testLockService.cc	/^std::queue<int> Q;$/;"	v
+Qi	test/testLockService.cc	/^int Qi = 0;$/;"	v
+ROTL32	MurmurHash3.cc	23;"	d	file:
+ROTL32	MurmurHash3.cc	44;"	d	file:
+ROTL64	MurmurHash3.cc	24;"	d	file:
+ROTL64	MurmurHash3.cc	45;"	d	file:
+Random	Random.h	/^class Random{$/;"	c	namespace:threadSafe
+RandomKey	test/testutil.cc	/^std::string RandomKey(Random* rnd, int len) {$/;"	f	namespace:leveldb::test
+RandomSeed	test/testharness.cc	/^int RandomSeed() {$/;"	f	namespace:leveldb::test
+RandomString	test/testutil.cc	/^Slice RandomString(Random* rnd, int len, std::string* dst) {$/;"	f	namespace:leveldb::test
+Random_Level	random.h	/^  explicit Random_Level(uint32_t s) : seed_(s & 0x7fffffffu) { }$/;"	f	class:leveldb::Random_Level
+Random_Level	random.h	/^class Random_Level {$/;"	c	namespace:leveldb
+RegisterTest	test/testharness.cc	/^bool RegisterTest(const char* base, const char* name, void (*func)()) {$/;"	f	namespace:leveldb::test
+RunAllTests	test/testharness.cc	/^int RunAllTests() {$/;"	f	namespace:leveldb::test
+S32AtomicInteger	AtomicInteger.h	/^typedef AtomicInteger<int32_t>  S32AtomicInteger;$/;"	t	namespace:threadSafe
+S64AtomicInteger	AtomicInteger.h	/^typedef AtomicInteger<int64_t>  S64AtomicInteger;$/;"	t	namespace:threadSafe
+SRCS	Makefile	/^SRCS = hash.cc coding.cc$/;"	m
+STORAGE_LEVELDB_INCLUDE_SLICE_H_	slice.h	11;"	d
+STORAGE_LEVELDB_UTIL_ARENA_H_	arena.h	6;"	d
+STORAGE_LEVELDB_UTIL_CODING_H_	coding.h	11;"	d
+STORAGE_LEVELDB_UTIL_HASH_H_	hash.h	8;"	d
+STORAGE_LEVELDB_UTIL_RANDOM_H_	random.h	6;"	d
+STORAGE_LEVELDB_UTIL_TESTHARNESS_H_	test/testharness.h	6;"	d
+STORAGE_LEVELDB_UTIL_TESTUTIL_H_	test/testutil.h	6;"	d
+SimpleThread	ThreadService.h	/^		explicit SimpleThread(fun ff): f(ff), thread_id(0) { }$/;"	f	class:threadSafe::SimpleThread
+SimpleThread	ThreadService.h	/^class SimpleThread: private boost::noncopyable {$/;"	c	namespace:threadSafe
+SimpleTimeCounter	TestHelper.h	/^		SimpleTimeCounter() {$/;"	f	class:threadSafe::SimpleTimeCounter
+SimpleTimeCounter	TestHelper.h	/^class SimpleTimeCounter{$/;"	c	namespace:threadSafe
+Skewed	random.h	/^  uint32_t Skewed(int max_log) {$/;"	f	class:leveldb::Random_Level
+Slice	slice.h	/^  Slice() : data_(""), size_(0) { }$/;"	f	class:leveldb::Slice
+Slice	slice.h	/^  Slice(const char* data, size_t n) : data_(data), size_(n) { }$/;"	f	class:leveldb::Slice
+Slice	slice.h	/^  Slice(const char* s) : data_(s), size_(strlen(s)) { }$/;"	f	class:leveldb::Slice
+Slice	slice.h	/^  Slice(const std::string& s) : data_(s.data()), size_(s.size()) { }$/;"	f	class:leveldb::Slice
+Slice	slice.h	/^class Slice {$/;"	c	namespace:leveldb
+TCONCAT	test/testharness.h	105;"	d
+TCONCAT1	test/testharness.h	106;"	d
+TEST	test/coding_test.cc	/^TEST(Coding, Fixed32) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Fixed64) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Strings) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Varint32) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Varint32Overflow) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Varint32Truncation) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Varint64) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Varint64Overflow) {$/;"	f	namespace:leveldb
+TEST	test/coding_test.cc	/^TEST(Coding, Varint64Truncation) {$/;"	f	namespace:leveldb
+TEST	test/testharness.h	108;"	d
+TRACE	Logger.h	139;"	d
+TRACE_	Logger.h	/^			TRACE_ = 0,$/;"	e	enum:threadSafe::Logger::LoggerLevel
+Test	test/testharness.cc	/^struct Test {$/;"	s	namespace:leveldb::test::__anon1	file:
+Tester	test/testharness.h	/^  Tester(const char* f, int l)$/;"	f	class:leveldb::test::Tester
+Tester	test/testharness.h	/^class Tester {$/;"	c	namespace:leveldb::test
+Thread	ThreadService.h	/^		explicit Thread(const func &ff): f(ff), thread_id(0) {  }$/;"	f	class:threadSafe::Thread
+Thread	ThreadService.h	/^class Thread: private boost::noncopyable {$/;"	c	namespace:threadSafe
+ThreadPoolWorker	ThreadService.h	/^		ThreadPoolWorker(const int &nThread_): $/;"	f	class:threadSafe::ThreadPoolWorker
+ThreadPoolWorker	ThreadService.h	/^class ThreadPoolWorker: private boost::noncopyable {$/;"	c	namespace:threadSafe
+ThreadUtils	ThreadService.h	/^namespace ThreadUtils{$/;"	n	namespace:threadSafe
+TmpDir	test/testharness.cc	/^std::string TmpDir() {$/;"	f	namespace:leveldb::test
+ToString	slice.h	/^  std::string ToString() const { return std::string(data_, size_); }$/;"	f	class:leveldb::Slice
+U32AtomicInteger	AtomicInteger.h	/^typedef AtomicInteger<uint32_t> U32AtomicInteger;$/;"	t	namespace:threadSafe
+U64AtomicInteger	AtomicInteger.h	/^typedef AtomicInteger<uint64_t> U64AtomicInteger;$/;"	t	namespace:threadSafe
+Uniform	random.h	/^  uint32_t Uniform(int n) { return Next() % n; }$/;"	f	class:leveldb::Random_Level
+VarintLength	coding.cc	/^int VarintLength(uint64_t v) {$/;"	f	namespace:leveldb
+WARN	Logger.h	142;"	d
+WARN_	Logger.h	/^			WARN_,$/;"	e	enum:threadSafe::Logger::LoggerLevel
+Work	ThreadService.h	/^		Work(const T &d, func f_): data(d), f(f_) { }$/;"	f	class:threadSafe::Work
+Work	ThreadService.h	/^		explicit Work(func f_): f(f_) { }$/;"	f	class:threadSafe::Work
+Work	ThreadService.h	/^class Work: private boost::noncopyable {$/;"	c	namespace:threadSafe
+_ATOMICINTEGER_H_INC	AtomicInteger.h	32;"	d
+_BLOOMFILTER_H_INC	BloomFilter.h	32;"	d
+_DOUBLEMURMUR_H_INC	DoubleMurmur.h	20;"	d
+_FILEUTILS_H_INC	FileUtils.h	21;"	d
+_LOCKSERVICE_H_INC	LockService.h	20;"	d
+_LOGGER_H__INC	Logger.h	21;"	d
+_MAPFILE_H_INC	MapFile.h	23;"	d
+_MURMURHASH3_H_	MurmurHash3.h	6;"	d
+_QUEUE_H_INC	Queue.h	20;"	d
+_RANDOM_H_INC	Random.h	21;"	d
+_SIMPLETHREAD_H_INC	ThreadService.h	2;"	d
+_TESTHELPER_H_INC	TestHelper.h	25;"	d
+add	AtomicInteger.h	/^		void add(const T &v) {$/;"	f	class:threadSafe::AtomicInteger
+addAndGet	AtomicInteger.h	/^		T addAndGet(const T &v) {$/;"	f	class:threadSafe::AtomicInteger
+addKey	BloomFilter.h	/^		void addKey(const char *key, size_t len) {$/;"	f	class:threadSafe::BloomFilter
+addKey	BloomFilter.h	/^		void addKey(const std::string &key) {$/;"	f	class:threadSafe::BloomFilter
+alloc_bytes_remaining_	arena.h	/^  size_t alloc_bytes_remaining_;$/;"	m	class:leveldb::Arena
+alloc_ptr_	arena.h	/^  char* alloc_ptr_;$/;"	m	class:leveldb::Arena
+appendBlock	MapFile.h	/^		static inline void appendBlock ( FILE *f, $/;"	f	class:threadSafe::MapFile
+base	test/testharness.cc	/^  const char* base;$/;"	m	struct:leveldb::test::__anon1::Test	file:
+bit_array	BloomFilter.h	/^		char *bit_array;$/;"	m	class:threadSafe::BloomFilter
+blocks_	arena.h	/^  std::vector<char*> blocks_;$/;"	m	class:leveldb::Arena
+blocks_memory_	arena.h	/^  size_t blocks_memory_;$/;"	m	class:leveldb::Arena
+boundedq	test/testQueue.cc	/^threadSafe::BoundedQueue<int, 2>  boundedq;$/;"	v
+bq	test/testQueue.cc	/^threadSafe::BlockingQueue<int> bq;$/;"	v
+chs	Random.h	/^		static const string chs;$/;"	m	class:threadSafe::Random
+chs	Random.h	/^const string Random::chs="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";$/;"	m	class:threadSafe::Random
+clear	slice.h	/^  void clear() { data_ = ""; size_ = 0; }$/;"	f	class:leveldb::Slice
+closeFile	Logger.h	/^		static void closeFile(void) {$/;"	f	class:threadSafe::Logger
+compare	slice.h	/^inline int Slice::compare(const Slice& b) const {$/;"	f	class:leveldb::Slice
+compareString	test/cpp2.cc	/^bool compareString(string a, string b)$/;"	f
+cond	LockService.h	/^		pthread_cond_t cond;$/;"	m	class:threadSafe::Condition
+cur	DoubleMurmur.h	/^		int cur;$/;"	m	class:DoubleMurmur
+cur	Logger.h	/^		LoggerLevel cur;$/;"	m	class:threadSafe::Logger
+data	ThreadService.h	/^		T data;$/;"	m	class:threadSafe::Work
+data	slice.h	/^  const char* data() const { return data_; }$/;"	f	class:leveldb::Slice
+dataFile	MapFile.h	/^		string dataFile ;$/;"	m	class:threadSafe::MapFile
+data_	slice.h	/^  const char* data_;$/;"	m	class:leveldb::Slice
+decrAndGet	AtomicInteger.h	/^		T decrAndGet() {$/;"	f	class:threadSafe::AtomicInteger
+dfp	MapFile.h	/^		FILE  *dfp, *ifp ; $/;"	m	class:threadSafe::MapFile
+digit_chs	Random.h	/^		static const string digit_chs;$/;"	m	class:threadSafe::Random
+digit_chs	Random.h	/^const string Random::digit_chs="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";$/;"	m	class:threadSafe::Random
+elapse	TestHelper.h	/^		time_t elapse() {$/;"	f	class:threadSafe::SimpleTimeCounter
+empty	slice.h	/^  bool empty() const { return size_ == 0; }$/;"	f	class:leveldb::Slice
+errNum	Logger.h	/^		int errNum;$/;"	m	class:threadSafe::Logger
+f	ThreadService.h	/^		fun f;$/;"	m	class:threadSafe::SimpleThread
+f	ThreadService.h	/^		func f;$/;"	m	class:threadSafe::Thread
+f	ThreadService.h	/^		func f;$/;"	m	class:threadSafe::Work
+f	test/testLockService.cc	/^void* f(void *) {$/;"	f
+f1	test/testLockService.cc	/^void * f1(void *) {$/;"	f
+f1	test/testQueue.cc	/^void* f1(void *)$/;"	f
+f2	test/testLockService.cc	/^void* f2(void *) {$/;"	f
+f2	test/testQueue.cc	/^void* f2(void *)$/;"	f
+f3	test/testQueue.cc	/^void * f3(void *)$/;"	f
+f4	test/testQueue.cc	/^void* f4(void *)$/;"	f
+fileName	Logger.h	/^		const char *fileName;$/;"	m	class:threadSafe::Logger
+first	DoubleMurmur.h	/^		uint32_t first, second;$/;"	m	class:DoubleMurmur
+flush	Logger.h	/^		static void flush() {$/;"	f	class:threadSafe::Logger
+fmix	MurmurHash3.cc	/^FORCE_INLINE uint32_t fmix ( uint32_t h )$/;"	f
+fmix	MurmurHash3.cc	/^FORCE_INLINE uint64_t fmix ( uint64_t k )$/;"	f
+fname_	test/testharness.h	/^  const char* fname_;$/;"	m	class:leveldb::test::Tester
+fp	Logger.h	/^		static FILE *fp;$/;"	m	class:threadSafe::Logger
+fp	Logger.h	/^FILE *Logger::fp = NULL;$/;"	m	class:threadSafe::Logger
+fun	ThreadService.h	/^		typedef void* (*fun)(void *);$/;"	t	class:threadSafe::SimpleThread
+funName	Logger.h	/^		const char *funName;$/;"	m	class:threadSafe::Logger
+func	ThreadService.h	/^		typedef boost::function<void ()> func;$/;"	t	class:threadSafe::Thread
+func	ThreadService.h	/^		typedef void (*func)(T &data); $/;"	t	class:threadSafe::Work
+func	test/testThreadPool.cc	/^void func(int &i) {$/;"	f
+func	test/testThreadTime.cc	/^void func(int &t) {$/;"	f
+func	test/testharness.cc	/^  void (*func)();$/;"	m	struct:leveldb::test::__anon1::Test	file:
+function	ThreadService.h	/^		void function() {$/;"	f	class:threadSafe::ThreadPoolWorker
+get	AtomicInteger.h	/^		T get() {$/;"	f	class:threadSafe::AtomicInteger
+get	Queue.h	/^			T get() {$/;"	f	class:threadSafe::BoundedQueue
+get	Queue.h	/^		T get() {$/;"	f	class:threadSafe::BlockingQueue
+getAndAdd	AtomicInteger.h	/^		T getAndAdd(const T &v) {$/;"	f	class:threadSafe::AtomicInteger
+getAndDecr	AtomicInteger.h	/^		T getAndDecr() {$/;"	f	class:threadSafe::AtomicInteger
+getAndIncr	AtomicInteger.h	/^		T getAndIncr() {$/;"	f	class:threadSafe::AtomicInteger
+getAndSet	AtomicInteger.h	/^		T getAndSet(const T &v) {$/;"	f	class:threadSafe::AtomicInteger
+getAndSub	AtomicInteger.h	/^		T getAndSub(const T &v) {$/;"	f	class:threadSafe::AtomicInteger
+getCondtionEmpty	test/testLockService.cc	/^Condition & getCondtionEmpty(Mutex &m) {$/;"	f
+getCondtionFull	test/testLockService.cc	/^Condition & getCondtionFull(Mutex &m) {$/;"	f
+getMutex	LockService.h	/^		pthread_mutex_t & getMutex() { return mutex; }$/;"	f	class:threadSafe::Mutex
+getMutex	test/testLockService.cc	/^Mutex& getMutex() {$/;"	f
+getRandDigitString	Random.h	/^		static string getRandDigitString(int len) {$/;"	f	class:threadSafe::Random
+getRandDigitString_fast	Random.h	/^		static string getRandDigitString_fast(int len) {$/;"	f	class:threadSafe::Random
+getRandString	Random.h	/^		static string getRandString(const string &str, int len) {$/;"	f	class:threadSafe::Random
+getRandString	Random.h	/^		static string getRandString(int len) {$/;"	f	class:threadSafe::Random
+getRandString_fast	Random.h	/^		static string getRandString_fast(const string &str, int len) {$/;"	f	class:threadSafe::Random
+getRandString_fast	Random.h	/^		static string getRandString_fast(int len) {$/;"	f	class:threadSafe::Random
+getStream	Logger.h	/^		std::ostringstream & getStream() {$/;"	f	class:threadSafe::Logger
+getWork	ThreadService.h	/^		static boost::shared_ptr<Work<T> > getWork($/;"	f	class:threadSafe::Work
+get_children_files	FileUtils.h	/^static inline int get_children_files ( const string &dir, $/;"	f	namespace:threadSafe
+getblock	MurmurHash3.cc	/^FORCE_INLINE uint32_t getblock ( const uint32_t * p, int i )$/;"	f
+getblock	MurmurHash3.cc	/^FORCE_INLINE uint64_t getblock ( const uint64_t * p, int i )$/;"	f
+has	test/testLockService.cc	/^bool has = false;$/;"	v
+ifp	MapFile.h	/^		FILE  *dfp, *ifp ; $/;"	m	class:threadSafe::MapFile
+incrAndGet	AtomicInteger.h	/^		T incrAndGet() {$/;"	f	class:threadSafe::AtomicInteger
+indexFile	MapFile.h	/^		string indexFile ;$/;"	m	class:threadSafe::MapFile
+index_iterval	MapFile.h	/^		uint16_t index_iterval;$/;"	m	class:threadSafe::MapFile
+init	Logger.h	/^		static void init(LoggerLevel le = LoggerLevel::INFO_, $/;"	f	class:threadSafe::Logger
+initFlag	Logger.h	/^		static bool initFlag;$/;"	m	class:threadSafe::Logger
+initFlag	Logger.h	/^bool Logger::initFlag = false;$/;"	m	class:threadSafe::Logger
+isIn	BloomFilter.h	/^		bool isIn(const char *key, size_t len) {$/;"	f	class:threadSafe::BloomFilter
+isIn	BloomFilter.h	/^		bool isIn(const std::string &key){$/;"	f	class:threadSafe::BloomFilter
+join	ThreadService.h	/^		void join() const { pthread_join(thread_id, NULL); }$/;"	f	class:threadSafe::SimpleThread
+join	ThreadService.h	/^		void join() const { pthread_join(thread_id, NULL); }$/;"	f	class:threadSafe::Thread
+join	ThreadService.h	/^		void join() {$/;"	f	class:threadSafe::ThreadPoolWorker
+kBlockSize	arena.cc	/^static const int kBlockSize = 4096;$/;"	m	namespace:leveldb	file:
+level	Logger.h	/^		static LoggerLevel level;$/;"	m	class:threadSafe::Logger
+level	Logger.h	/^Logger::LoggerLevel Logger::level = INFO_;$/;"	m	class:threadSafe::Logger
+levelName	Logger.h	/^		static const char *levelName[]; $/;"	m	class:threadSafe::Logger
+levelName	Logger.h	/^const char * Logger::levelName[] = {"TRACE", "DEBUG", "INFO",$/;"	m	class:threadSafe::Logger
+leveldb	arena.cc	/^namespace leveldb {$/;"	n	file:
+leveldb	arena.h	/^namespace leveldb {$/;"	n
+leveldb	coding.cc	/^namespace leveldb {$/;"	n	file:
+leveldb	coding.h	/^namespace leveldb {$/;"	n
+leveldb	hash.cc	/^namespace leveldb {$/;"	n	file:
+leveldb	hash.h	/^namespace leveldb {$/;"	n
+leveldb	random.h	/^namespace leveldb {$/;"	n
+leveldb	slice.h	/^namespace leveldb {$/;"	n
+leveldb	test/coding_test.cc	/^namespace leveldb {$/;"	n	file:
+leveldb	test/testharness.cc	/^namespace leveldb {$/;"	n	file:
+leveldb	test/testharness.h	/^namespace leveldb {$/;"	n
+leveldb	test/testutil.cc	/^namespace leveldb {$/;"	n	file:
+leveldb	test/testutil.h	/^namespace leveldb {$/;"	n
+lineNo	Logger.h	/^		int lineNo;$/;"	m	class:threadSafe::Logger
+line_	test/testharness.h	/^  int line_;$/;"	m	class:leveldb::test::Tester
+list	Queue.h	/^			std::list<T> list;$/;"	m	class:threadSafe::BoundedQueue
+list	Queue.h	/^		std::list<T> list;$/;"	m	class:threadSafe::BlockingQueue
+lock	LockService.h	/^		void lock() { pthread_mutex_lock(&mutex); }$/;"	f	class:threadSafe::Mutex
+logFunc	test/testLogging.cc	/^void logFunc(int &T) {$/;"	f
+logPiece	Logger.h	/^		std::ostringstream logPiece;$/;"	m	class:threadSafe::Logger
+m	LockService.h	/^		Mutex &m;$/;"	m	class:threadSafe::Condition
+m	LockService.h	/^		Mutex &m;$/;"	m	class:threadSafe::MutexGuard
+m	Logger.h	/^		static Mutex m;$/;"	m	class:threadSafe::Logger
+m	Logger.h	/^Mutex Logger::m;$/;"	m	class:threadSafe::Logger
+m	Queue.h	/^			mutable Mutex m;$/;"	m	class:threadSafe::BoundedQueue
+m	Queue.h	/^		Mutex m;$/;"	m	class:threadSafe::BlockingQueue
+m	ThreadService.h	/^		Mutex m;$/;"	m	class:threadSafe::ThreadPoolWorker
+m	test/testLockService.cc	/^threadSafe::Mutex m;$/;"	v
+main	test/coding_test.cc	/^int main(int argc, char** argv) {$/;"	f
+main	test/cpp2.cc	/^int main()$/;"	f
+main	test/testAtomicInteger.cc	/^int main()$/;"	f
+main	test/testBloomFilter.cc	/^main ( int argc, char *argv[] )$/;"	f
+main	test/testCoding.cc	/^main ( int argc, char *argv[] )$/;"	f
+main	test/testDoubleHash.cc	/^main ( int argc, char *argv[] )$/;"	f
+main	test/testFileUtils.cc	/^int main ( ) {$/;"	f
+main	test/testLockService.cc	/^int main()$/;"	f
+main	test/testLogging.cc	/^int main()$/;"	f
+main	test/testOrder.cc	/^int main (	) {$/;"	f
+main	test/testProgress.cc	/^int main ( ) {$/;"	f
+main	test/testQueue.cc	/^int main() $/;"	f
+main	test/testSpeed.cc	/^main ( int argc, char *argv[] )$/;"	f
+main	test/testThreadPool.cc	/^int main()$/;"	f
+main	test/testThreadTime.cc	/^int main()$/;"	f
+max_bits	BloomFilter.h	/^		static const uint64_t max_bits;$/;"	m	class:threadSafe::BloomFilter
+max_bits	BloomFilter.h	/^const uint64_t BloomFilter::max_bits = (static_cast<uint64_t>(1) << 30) * 8;$/;"	m	class:threadSafe::BloomFilter
+mutex	LockService.h	/^		pthread_mutex_t mutex;$/;"	m	class:threadSafe::Mutex
+nNum	test/testLockService.cc	/^const int nNum = 10000;$/;"	v
+nT	test/testThreadTime.cc	/^const int nT = 20;$/;"	v
+nThread	ThreadService.h	/^		const int nThread;$/;"	m	class:threadSafe::ThreadPoolWorker
+nThread	test/testLockService.cc	/^const int nThread = 10;$/;"	v
+name	test/testharness.cc	/^  const char* name;$/;"	m	struct:leveldb::test::__anon1::Test	file:
+next	DoubleMurmur.h	/^		uint32_t next() {$/;"	f	class:DoubleMurmur
+nkey	test/testBloomFilter.cc	/^const int nkey= 10000000;$/;"	v
+notEmpty	Queue.h	/^			mutable Condition notFull, notEmpty;$/;"	m	class:threadSafe::BoundedQueue
+notEmpty	Queue.h	/^		Condition notEmpty;$/;"	m	class:threadSafe::BlockingQueue
+notEmpty	ThreadService.h	/^		Condition notEmpty;$/;"	m	class:threadSafe::ThreadPoolWorker
+notFull	Queue.h	/^			mutable Condition notFull, notEmpty;$/;"	m	class:threadSafe::BoundedQueue
+notify	LockService.h	/^		void notify() { pthread_cond_signal(&cond); }$/;"	f	class:threadSafe::Condition
+notifyAll	LockService.h	/^		void notifyAll() { pthread_cond_broadcast(&cond); }$/;"	f	class:threadSafe::Condition
+num_writable_file_errors_	test/testutil.h	/^  int num_writable_file_errors_;$/;"	m	class:leveldb::test::ErrorEnv
+ok_	test/testharness.h	/^  bool ok_;$/;"	m	class:leveldb::test::Tester
+onceSize	test/testQueue.cc	/^const int onceSize = 10;$/;"	v
+openFile	MapFile.h	/^		static inline FILE * openFile ( const char * fileName, $/;"	f	class:threadSafe::MapFile
+operator !=	slice.h	/^inline bool operator!=(const Slice& x, const Slice& y) {$/;"	f	namespace:leveldb
+operator <<	test/testharness.h	/^  Tester& operator<<(const V& value) {$/;"	f	class:leveldb::test::Tester
+operator ==	slice.h	/^inline bool operator==(const Slice& x, const Slice& y) {$/;"	f	namespace:leveldb
+operator []	slice.h	/^  char operator[](size_t n) const {$/;"	f	class:leveldb::Slice
+pid	ThreadService.h	/^	inline pid_t pid() { return getpid();} $/;"	f	namespace:threadSafe::ThreadUtils
+put	Queue.h	/^			void put(const T &data) {$/;"	f	class:threadSafe::BoundedQueue
+put	Queue.h	/^		void put(const T &data) {$/;"	f	class:threadSafe::BlockingQueue
+putWork	ThreadService.h	/^		void putWork(const boost::shared_ptr<Work<T> > &ptr) {$/;"	f	class:threadSafe::ThreadPoolWorker
+random	Random.h	/^		static leveldb::Random_Level random;$/;"	m	class:threadSafe::Random
+read_unlock	FileUtils.h	/^static inline size_t read_unlock ( void *ptr, $/;"	f	namespace:threadSafe
+remove_file	FileUtils.h	/^static inline void remove_file ( const string &file_name ) {$/;"	f	namespace:threadSafe
+remove_prefix	slice.h	/^  void remove_prefix(size_t n) {$/;"	f	class:leveldb::Slice
+rotl32	MurmurHash3.cc	/^inline uint32_t rotl32 ( uint32_t x, int8_t r )$/;"	f
+rotl64	MurmurHash3.cc	/^inline uint64_t rotl64 ( uint64_t x, int8_t r )$/;"	f
+running	ThreadService.h	/^		bool running;$/;"	m	class:threadSafe::ThreadPoolWorker
+rw	MapFile.h	/^		bool rw ;$/;"	m	class:threadSafe::MapFile
+second	DoubleMurmur.h	/^		uint32_t first, second;$/;"	m	class:DoubleMurmur
+seed	Random.h	/^		static void seed() {$/;"	f	class:threadSafe::Random
+seed_	random.h	/^  uint32_t seed_;$/;"	m	class:leveldb::Random_Level
+size	Queue.h	/^			size_t size() const {$/;"	f	class:threadSafe::BoundedQueue
+size	Queue.h	/^		size_t size() {$/;"	f	class:threadSafe::BlockingQueue
+size	slice.h	/^  size_t size() const { return size_; }$/;"	f	class:leveldb::Slice
+size_	slice.h	/^  size_t size_;$/;"	m	class:leveldb::Slice
+ss_	test/testharness.h	/^  std::stringstream ss_;$/;"	m	class:leveldb::test::Tester
+start	TestHelper.h	/^		time_t start;$/;"	m	class:threadSafe::SimpleTimeCounter
+start	ThreadService.h	/^		void start() { pthread_create(&thread_id, NULL, f, NULL); }$/;"	f	class:threadSafe::SimpleThread
+start	ThreadService.h	/^		void start() { pthread_create(&thread_id, NULL, thread_func, this); }$/;"	f	class:threadSafe::Thread
+start	ThreadService.h	/^		void start() {$/;"	f	class:threadSafe::ThreadPoolWorker
+starts_with	slice.h	/^  bool starts_with(const Slice& x) const {$/;"	f	class:leveldb::Slice
+stop	ThreadService.h	/^		void stop() {$/;"	f	class:threadSafe::ThreadPoolWorker
+string_to_unlong	test/cpp2.cc	/^unsigned long long string_to_unlong(string a)$/;"	f
+sub	AtomicInteger.h	/^		void sub(const T &v) {$/;"	f	class:threadSafe::AtomicInteger
+subAndGet	AtomicInteger.h	/^		T subAndGet(const T &v) {$/;"	f	class:threadSafe::AtomicInteger
+test	test/testharness.cc	/^namespace test {$/;"	n	namespace:leveldb	file:
+test	test/testharness.h	/^namespace test {$/;"	n	namespace:leveldb
+test	test/testutil.cc	/^namespace test {$/;"	n	namespace:leveldb	file:
+test	test/testutil.h	/^namespace test {$/;"	n	namespace:leveldb
+testExe	Makefile	/^testExe := $(testOBJs:.o=.exe)$/;"	m
+testOBJs	Makefile	/^testOBJs := $(tests:.cc=.o)$/;"	m
+tests	Makefile	/^tests = testLockService.cc testQueue.cc testThreadPool.cc testThreadTime.cc testAtomicInteger.cc testLogging.cc  testDoubleHash.cc testBloomFilter.cc testSpeed.cc  testProgress.cc testFileUtils.cc testOrder.cc cpp2.cc testCoding.cc$/;"	m
+tests	test/testharness.cc	/^std::vector<Test>* tests;$/;"	m	namespace:leveldb::test::__anon1	file:
+threadSafe	AtomicInteger.h	/^namespace threadSafe{$/;"	n
+threadSafe	BloomFilter.h	/^namespace threadSafe{$/;"	n
+threadSafe	FileUtils.h	/^namespace threadSafe {$/;"	n
+threadSafe	LockService.h	/^namespace threadSafe{$/;"	n
+threadSafe	Logger.h	/^namespace threadSafe{$/;"	n
+threadSafe	MapFile.h	/^namespace threadSafe {$/;"	n
+threadSafe	Queue.h	/^namespace threadSafe {$/;"	n
+threadSafe	Random.h	/^namespace threadSafe{$/;"	n
+threadSafe	TestHelper.h	/^namespace threadSafe {$/;"	n
+threadSafe	ThreadService.h	/^namespace threadSafe{$/;"	n
+thread_func	ThreadService.h	/^		static void*  thread_func(void *t) {$/;"	f	class:threadSafe::Thread
+thread_id	ThreadService.h	/^		pthread_t thread_id;$/;"	m	class:threadSafe::SimpleThread
+thread_id	ThreadService.h	/^		pthread_t thread_id;$/;"	m	class:threadSafe::Thread
+thread_id	ThreadService.h	/^	inline pthread_t thread_id() { return pthread_self(); }$/;"	f	namespace:threadSafe::ThreadUtils
+threads	ThreadService.h	/^		boost::ptr_vector<Thread> threads;$/;"	m	class:threadSafe::ThreadPoolWorker
+uint32_t	MurmurHash3.h	/^typedef unsigned long uint32_t;$/;"	t
+uint64_t	MurmurHash3.h	/^typedef unsigned __int64 uint64_t;$/;"	t
+uint8_t	MurmurHash3.h	/^typedef unsigned char uint8_t;$/;"	t
+unlock	LockService.h	/^		void unlock() { pthread_mutex_unlock(&mutex) ; }$/;"	f	class:threadSafe::Mutex
+value	AtomicInteger.h	/^		volatile T value;$/;"	m	class:threadSafe::AtomicInteger
+wait	LockService.h	/^		void wait() { pthread_cond_wait(&cond, &(m.getMutex())); } $/;"	f	class:threadSafe::Condition
+waitTimeOut	LockService.h	/^		void waitTimeOut(const struct timespec &abstime) { $/;"	f	class:threadSafe::Condition
+works	ThreadService.h	/^		std::list<boost::shared_ptr<Work<T> > > works;$/;"	m	class:threadSafe::ThreadPoolWorker
+works	test/testThreadPool.cc	/^const int works = 10000;$/;"	v
+works	test/testThreadTime.cc	/^const int works = 1000;$/;"	v
+writable_file_error_	test/testutil.h	/^  bool writable_file_error_;$/;"	m	class:leveldb::test::ErrorEnv
+write_unlock	FileUtils.h	/^static inline size_t write_unlock ( const void *ptr, $/;"	f	namespace:threadSafe
+~Arena	arena.cc	/^Arena::~Arena() {$/;"	f	class:leveldb::Arena
+~AtomicInteger	AtomicInteger.h	/^		~AtomicInteger() { }$/;"	f	class:threadSafe::AtomicInteger
+~BloomFilter	BloomFilter.h	/^		~ BloomFilter ( ) {$/;"	f	class:threadSafe::BloomFilter
+~Condition	LockService.h	/^		~Condition() { pthread_cond_destroy(&cond); }$/;"	f	class:threadSafe::Condition
+~Logger	Logger.h	/^		~Logger() {$/;"	f	class:threadSafe::Logger
+~Mutex	LockService.h	/^		~Mutex() { pthread_mutex_destroy(&mutex); }$/;"	f	class:threadSafe::Mutex
+~MutexGuard	LockService.h	/^		~MutexGuard() { m.unlock(); }$/;"	f	class:threadSafe::MutexGuard
+~SimpleTimeCounter	TestHelper.h	/^		~SimpleTimeCounter() {$/;"	f	class:threadSafe::SimpleTimeCounter
+~Tester	test/testharness.h	/^  ~Tester() {$/;"	f	class:leveldb::test::Tester
+~ThreadPoolWorker	ThreadService.h	/^		~ThreadPoolWorker() {$/;"	f	class:threadSafe::ThreadPoolWorker
