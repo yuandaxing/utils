@@ -50,6 +50,7 @@ const int Op::priority_[len_][len_] = {
 int find_not_digit(const std::string &str, int start) {
 	return str.find_first_not_of("0123456789", start);
 }
+
 int eval(int left, int right, char op) {
 	switch ( op )
 	{

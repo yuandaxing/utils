@@ -1,49 +1,42 @@
 #include <stdio.h>
-#include <iostream>
-#include <stdlib.h>
 
-struct evil {
+int ans[10];
 
-	size_t operator&() {
+void output()
+{
+for(int i=0;i<10;++i)
+printf("%d ",ans[i]);
+printf("\n");
+}
 
-		return 0;
-	}
-};
+bool test()
+{
+int num[10] = {};
+for(int i=0;i<10;++i)
+num[ans[i]] ++;
+for(int i=0;i<10;++i)
+if(ans[i] != num[i])
+return 0;
+return 1;
+}
 
-evil ev;
+void solve(int po)
+{
+if(po == 9)
+{
+if(test())
+output();
+return ;
+}
+for(int i=0;i<10;++i)
+{
+ans[po] = i;
+solve(po+1);
+}
+}
 
 int main()
 {
-	if( true )
-	{
-		printf("how are you");
-	}
-	while( true )
-	{
-		break;
-	}
-	int i = 1;
-	switch ( i )
-	{
-		case 1 :
-			break;
-		case 2 :
-			break;
-		default :
-			break;
-	}
-	exit(0);
-
-	int A[] = {
-		5, 1, 2, 3, 4, 5
-	};
-	int result = A[0];
-	int n = sizeof(A) / sizeof(A[0]);
-	for(int i = 1; i < n; i++)
-		result = result ^ i ^ A[i];
-	printf("%d\n", result);
-
-
-	printf("%u\n", &ev);
-	printf("%p\n", &(char&)ev);
+solve(0);
+return 0;
 }

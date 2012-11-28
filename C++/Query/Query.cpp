@@ -15,7 +15,6 @@
  *
  * =====================================================================================
  */
-
 #include <iostream>
 #include <fstream>
 #include <set>
@@ -28,6 +27,7 @@ class WordQuery;
 class OrQuery;
 class AndQuery;
 
+//Query class could be replace by shared_ptr<Query_base> 
 class Query_base {
 		friend class Query;
 	protected:
@@ -41,7 +41,6 @@ class Query_base {
 };
 
 //Handler Class to to hold everything
-
 class Query {
 		friend Query operator~(const Query& ) ;
 		friend Query operator|(const Query& , const Query& ) ;
@@ -84,8 +83,8 @@ inline Query& Query::operator=(const Query &rhs)
 	use = rhs.use; 
 	return *this; 
 }
-inline std::ostream& operator<<(std::ostream& os, 
-		const Query &q) {
+inline std::ostream& operator<<( std::ostream& os, 
+		const Query &q ) {
 	return q.display(os);
 }
 
@@ -183,6 +182,7 @@ NotQuery::eval(const TextQuery& tq) const {
 	}
 	return ret;
 }
+
 int main(int argc, char *argv[])
 {
 	std::string s1("the"), s2("Her"), s3("in");
@@ -190,7 +190,7 @@ int main(int argc, char *argv[])
 	TextQuery tq;
 	std::ifstream fin(file.c_str());
 	tq.read_file(fin);
-	Query q = (Query(s1) & Query(s2)) | Query(s3);
+	Query q = Query(s1) & Query(s2) | Query(s3);
 	std::set<TextQuery::line_no> set = q.eval(tq);
 	typedef std::set<TextQuery::line_no>::iterator iter_stq;
 	for( iter_stq iter= set.begin() ; iter != set.end() ; iter++ )

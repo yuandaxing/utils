@@ -1,42 +1,59 @@
 /*
- * =====================================================================================
- *
- *       Filename:  test1.cpp
- *
- *    Description:  
- *
- *        Version:  1.0
- *        Created:  2012年07月10日 21时13分31秒
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Yuan DaXing (http://goo.gl/VpwzO), mryuan0@gmail.com
- *   Organization:  
- *
- * =====================================================================================
- */
+ID: mryuan01
+LANG: C++
+TASK:gift1
+*/
 
-#include <stdio.h>
-#include <assert.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<map>
+#include<vector>
+#include<string>
+#include<iostream>
+#include<fstream>
+using namespace std;
+map<string, int> result;
+vector<string> names;
 
-int main(int argc, char *argv[])
+int main()
 {
-	int (*a1)[10];
-	int b[9][10];
-	a1 = b;
-	if( argc < 2 )
-	{
-		printf("argument error\n");
-		abort();
+	int n;
+	string name;
+	ifstream fin("gift1.in");
+	ofstream fout("gift1.out");
+
+	fin>>n;
+	
+	for(int i = 0; i < n; i++){
+		fin>>name;
+		names.push_back(name);
+		result[name] = 0;
 	}
-	int a = atoi(argv[1]);
-	printf("%d", a);
-	printf("hello, world\n");
-	assert(1 == 1);
-	while( true )
-	{
-		break;
+	for(int i = 0; i < n; i++){
+		int giver, nu;
+		int out , in; 
+		string gname;
+		
+		fin>>gname;
+		fin>>giver>>nu;
+
+		if(nu){
+			out = giver / nu;
+			in = giver % nu;
+			result[gname] += in - giver;
+		}
+
+		for(int j = 0; j < nu; j++){
+			string tmp;
+			fin>>tmp;
+			result[tmp] += out;
+		}
 	}
-	exit(0);
+
+	for(int i = 0; i < n; i++){
+		fout<<names[i]<<" " <<
+			result[names[i]]<<endl;
+		
+	}
+	
+	return 0;
 }
