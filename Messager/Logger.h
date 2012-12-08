@@ -133,7 +133,7 @@ Mutex Logger::m;
 bool Logger::initFlag = false;
 const char * Logger::LoggerName = NULL;
 Logger::LoggerLevel Logger::level = INFO_;
-FILE *Logger::fp = NULL;
+FILE *Logger::fp = stdout;
 const char * Logger::levelName[] = {"TRACE", "DEBUG", "INFO",
 											"WARN", "ERR"};
 #define TRACE 	threadSafe::Logger(Logger::LoggerLevel::TRACE_, __FILE__, __func__, __LINE__).getStream()

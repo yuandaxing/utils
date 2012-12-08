@@ -23,6 +23,8 @@
 #define  MESSAGER_CHANNEL_H__INC
 #include <string>
 #include <sys/epoll.h>
+#include <tr1/functional>
+class EventLoop;
 class Channel {
 	public:
 		friend class EPoller;
@@ -43,6 +45,7 @@ class Channel {
 			kWrite 	= EPOLLOUT
 		};
 		Channel( );
+		Channel(int fd);
 		~Channel( );
 		int read(char *buf, int size);
 		int write(const char *buf, int size);
@@ -50,12 +53,24 @@ class Channel {
 		Channel * accept();
 		bool bind(const struct sockaddr_in &);
 		bool listen(int qsize);
-		bool setOption(int options);
+		void setOption(int options);
 		void close();
 		bool Valid();
 		bool readable();
 		bool writeable();
+
+		bool regEventLoop(EventLoop *el, EventType e);
+		void unregEventLoop(EventLoop *el, EventType e);
+
 		bool error();
+		void doProcess();
+		void setProcess(std::tr1::function<void ()> p,
+				int type) {
+			if(type == 1)
+				readProcess_ = p;
+			if(type == 2)
+				writeProcess_ = p;
+		}
 	private:
 		//no copy
 		Channel(const Channel&);
@@ -71,5 +86,6 @@ class Channel {
 		int whyWakeup_;
 		enum State state_;
 		bool Valid_;
+		std::tr1::function<void ()> readProcess_, writeProcess_;
 };
 #endif   /* ----- #ifndef MESSAGER_CHANNEL_H__INC  ----- */

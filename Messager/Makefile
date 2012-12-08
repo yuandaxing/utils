@@ -7,7 +7,7 @@ AR      =ar
 
 CFLAGS =  -g -Wall -pedantic -std=c++0x
 LDFLAGS = -std=c++0x
-SRCS 	=  Channel.cpp EPoller.cpp
+SRCS 	=  Channel.cpp EPoller.cpp EventLoop.cpp SimplePingPong.cpp
 #SRCS =  Palindrome.cpp longestCommonSubstring.cpp \
 #		LongestPalindromicSubstring.cpp regularExpression.cpp \
 #		cycleSortedList.cpp reverseBit.cpp lowestCommonAncestorBT.cpp \
@@ -25,9 +25,9 @@ SRCS 	=  Channel.cpp EPoller.cpp
 #		arraycut.cpp numBytes.cpp chess.cpp RainTrap.cpp \
 #		pow.cpp MatrixFindZero.cpp 2DRainWater.cpp
 OBJS := $(SRCS:.cpp=.o)
-#EXE := Query.exe
+EXE := SimplePingPong.exe
 
-all:$(OBJS)
+all:$(OBJS) $(EXE)
 
 $(EXE):$(OBJS) 
 	$(CC) -o $@ $(OBJS) $(LDFLAGS)

@@ -20,8 +20,13 @@
 #include "EPoller.h"
 #include <sys/epoll.h>
 #include "Logger.h"
+/* 
+ * for epoll we use level trigger please see man 7 epoll to see why
+ * we just use poll add del interface
+ * current, it do not consider portable
+ * */
 using namespace threadSafe;
-EPoller::EPoller(int nfd) : epfd_(::epoll_create1(FD_CLOEXEC)), 
+EPoller::EPoller(int nfd) : epfd_(::epoll_create1(0)), 
 	eventList_(kNFd) { 
 		if(epfd_ < 0) {
 			ERR << "create epoll fd failed\n";
@@ -70,6 +75,8 @@ bool EPoller::update(int operation, Channel &ch) {
 
 		return false;
 	}
+
+	ch.state_ = Channel::kAdded;
 	return true;
 }
 bool EPoller::add(Channel &ch, enum Channel::EventType e) {
@@ -80,7 +87,6 @@ bool EPoller::add(Channel &ch, enum Channel::EventType e) {
 		operation = EPOLL_CTL_MOD;
 	}
 	ch.setEvent(e);
-	ch.state_ = Channel::kAdded;
 	return update(operation, ch);
 }
 
