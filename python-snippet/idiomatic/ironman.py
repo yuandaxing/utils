@@ -18,3 +18,20 @@ class WarMan(IronMan) :
 
 ironman = WarMan()
 print ironman.suite
+
+
+#writing metaclass
+class Meta(type) :
+    pass
+
+class Final(object):
+    __metaclass__ = Meta
+
+#
+class Meta(type) :
+    def __new__(meta, name, supers, attrs) :
+        print 'meta.new execution hook'
+        return type.__new__(meta, name, supers, attrs)
+
+    def __init__(class_, name, supers, attrs) :
+        print 'meta.init execution hook'
